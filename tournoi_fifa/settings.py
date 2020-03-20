@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'home',
     'users',
     'connexion',
 ]
@@ -56,7 +57,9 @@ ROOT_URLCONF = 'tournoi_fifa.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+                    "home/templates/",
+                ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
