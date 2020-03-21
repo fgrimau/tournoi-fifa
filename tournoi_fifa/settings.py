@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'home',
     'users',
+    'matching',
     'connexion',
     'bootstrap4',
 ]

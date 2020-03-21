@@ -13,7 +13,7 @@
         </div>
         <div class="row">
             <div class="col d-xl-flex align-items-xl-center" style="padding-right: 5%;padding-left: 5%;padding-bottom: 5%;">
-                <div style="width: 75%;"><img class="img-thumbnail bg-warning border rounded-0 shadow-sm" src="assets/img/43477020.jpg" style="max-width: 250px;"><span style="font-size: 30px;font-family: 'Droid Serif';font-weight: bold;">&nbsp;point : {point_total}</span></div>
+                <div style="width: 75%;"><img class="img-thumbnail bg-warning border rounded-0 shadow-sm" src="assets/img/43477020.jpg" style="max-width: 250px;"><span style="font-size: 30px;font-family: 'Droid Serif';font-weight: bold;">&nbsp;point : {{total_points}}</span></div>
             </div>
         </div>
         <div class="row" style="padding-bottom: 2%;">
@@ -25,64 +25,29 @@
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th>Partie jouées</th>
-                                <th>Column 2</th>
+                                <th class="col-md-3">Gagnant</th>
+                                <th class="col-md-3">Perdant</th>
+                                <th class="col-md-3">Score</th>
+                                <th class="col-md-3">Date</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>Cell 1</td>
-                                <td>Cell 2</td>
-                            </tr>
-                            <tr>
-                                <td>Cell 3</td>
-                                <td>Cell 4</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="col">
-                <div class="table-responsive table-borderless">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Column 1</th>
-                                <th>Column 2</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Cell 1</td>
-                                <td>Cell 2</td>
-                            </tr>
-                            <tr>
-                                <td>Cell 3</td>
-                                <td>Cell 4</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="col">
-                <div class="table-responsive table-borderless">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Column 1</th>
-                                <th>Column 2</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Cell 1</td>
-                                <td>Cell 2</td>
-                            </tr>
-                            <tr>
-                                <td>Cell 3</td>
-                                <td>Cell 4</td>
-                            </tr>
-                        </tbody>
+                        {% for history_entry in user_history %}
+                            <tbody>
+                                <tr>
+                                    <td>{{ history_entry.winner.username }}</td>
+                                    <td>{{ history_entry.looser.username }}</td>
+                                    <td>{{ history_entry.winner_points }}-{{ history_entry.looser_points }}</td>
+                                    <td>{{ history_entry.date_played|date:"d/m/Y - G:i" }}</td>
+                                </tr>
+                            </tbody>
+                        {% empty %}
+                            <tbody>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tbody>
+                        {% endfor %}
                     </table>
                 </div>
             </div>

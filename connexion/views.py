@@ -39,8 +39,6 @@ def login_view(request, lang=""):
         username = form["username"]
         password = form["password"]
 
-        print("foferofreofjre :", username)
-
         try:
             user = authenticate(username=username, password=password)
             if user:
