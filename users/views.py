@@ -1,3 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def profile_view(request, lang=""):
+    return render(request, "profil.html", locals())
