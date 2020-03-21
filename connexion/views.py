@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from connexion.forms import UserForm, CompleteProfileForm
 
 
@@ -10,7 +10,7 @@ def register_view(request):
             return redirect("/")
     else:
         form = UserForm
-    return render(request, "login.html", locals())
+    return render(request, "register.html", locals())
 
 
 def complete_profile_view(request):
@@ -21,7 +21,7 @@ def complete_profile_view(request):
             return redirect("/")
     else:
         form = CompleteProfileForm
-    return render(request, "login.html", locals())
+    return render(request, "register.html", locals())
 
 
 

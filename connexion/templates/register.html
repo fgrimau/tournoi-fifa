@@ -22,17 +22,12 @@
     <body>
         <div class="login-dark">
             <form method="post">
-                <h2 class="text-center">Connexion</h2>
+                <h3 class="text-center">Inscription</h3>
                 <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
                 {% csrf_token %}
-
-                <div class="form-group">
-                    <input type="text" name="username" maxlength="150" class="form-control" placeholder="Nom d’utilisateur" id="id_username">
-                <div class="form-group">
-                    <input type="password" name="password" maxlength="128" class="form-control" placeholder="Mot de passe" required id="id_password">
-                </div>
+                {% bootstrap_form form show_label=False %}
                 {% buttons %}
-                    <button class="btn btn-primary btn-block" type="submit">Se connecter</button>
+                    <button class="btn btn-primary btn-block" type="submit">S'inscrire</button>
                     <small>
                         <a href="/">
                             <ion-icon name="arrow-back-outline"></ion-icon>
