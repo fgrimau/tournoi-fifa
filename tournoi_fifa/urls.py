@@ -20,7 +20,7 @@ import home.views
 
 urlpatterns = [
     path('', home.views.lang_view, name="choose_lang"),
+    path('admin/', admin.site.urls),
     path('<slug:lang>/users/', include('users.urls')),
     path('<slug:lang>/', include('home.urls')),
-    path('admin/', admin.site.urls),
 ]
