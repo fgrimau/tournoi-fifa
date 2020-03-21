@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from connexion.forms import UserForm, CompleteProfileForm
 
 
-def register_view(request):
+def register_view(request, lang=""):
     if request.method == "POST":
         form = UserForm(request.POST)
         if form.is_valid():  # Verify the data of the form
@@ -13,7 +13,7 @@ def register_view(request):
     return render(request, "register.html", locals())
 
 
-def complete_profile_view(request):
+def complete_profile_view(request, lang=""):
     if request.method == "POST":
         form = CompleteProfileForm(request.POST)
         if form.is_valid():  # Verify the data of the form
@@ -24,6 +24,5 @@ def complete_profile_view(request):
     return render(request, "register.html", locals())
 
 
-
-def login_view(request):
+def login_view(request, lang=""):
     return render(request, "login.html")
