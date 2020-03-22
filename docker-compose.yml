@@ -1,0 +1,18 @@
+version: '3.3'
+
+services:
+  web:
+    build: ./
+    command: gunicorn tournoi_fifa.wsgi:application --bind 0.0.0.0:8000
+    volumes:
+      - ./:/usr/src/app/
+    ports:
+      - 8000:8000
+    env_file:
+      - ./.env.dev
+  db:
+    image: postgres:12.0-alpine
+    environment:
+      - POSTGRES_USER=covid19
+      - POSTGRES_PASSWORD=***REMOVED***
+      - POSTGRES_DB=tournoi_fifa
