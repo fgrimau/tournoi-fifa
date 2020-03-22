@@ -4,131 +4,121 @@
 {% load static %}
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Home - Fifa corona tournament</title>
-    <meta name="description" content="Tournoi Fifa pour récolter des fonds contre le covid-19">
-    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-    <link rel="stylesheet" href="{% static 'css/styles.min.css' %}">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>Home - Fifa corona tournament</title>
+  <meta name="description" content="Tournoi Fifa pour récolter des fonds contre le covid-19">
+  <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="{% static 'css/styles.min.css' %}">
 </head>
 
 <body id="page-top">
-    <nav class="navbar navbar-dark navbar-expand-lg fixed-top" id="mainNav"  style="background-color: rgb(33,37,41);">
-        <div class="container-fluid"><a href="{% url 'home_view' lang %}" style="max-width: 300px;width: 300px;"><img src="{% static 'img/logo.svg' %}" style="max-width: 300px;"></a><button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right" type="button"
-                data-toogle="collapse" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="nav navbar-nav mx-auto text-uppercase">
-                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="{% url 'home_view' lang %}#about">about</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="{% url 'home_view' lang %}#team">Contributors</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="{% url 'home_view' lang %}#services">Rules</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'scoreboard_view' lang 'choose' %}">Scoreboard</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="{% url 'home_view' lang %}#contact">Contact</a></li>
-                </ul>
-            </div>
-            <ul class="nav navbar-nav">
-                {% if user.is_authenticated %}
-                <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'profile_view' lang %}">{{ user.username }}</a></li>
-                <li class="nav-item" role="presentation"><a class="nav-link active" href="{% url 'disconnect_view' lang %}" style="margin-right: 20px;">Disconnect</a></li>
-                {% else %}
-                <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'login_view' lang %}">Login</a></li>
-                <li class="nav-item" role="presentation"><a class="nav-link active" href="{% url 'register_view' lang %}" style="margin-right: 20px;">Sign up</a></li>
-                {% endif %}
-                <li class="nav-item text-center" role="presentation"><a class="nav-link {% if lang == 'fr' %}active{% endif %} text-center" href="/fr/" style="font-size: 13px;width: 30px;">FR</a></li>
-                <li class="nav-item" role="presentation"><a class="nav-link {% if lang == 'nl' %}active{% endif %}" href="/nl/" style="font-size: 13px;width: 30px;">NL</a></li>
-                <li class="nav-item" role="presentation"><a class="nav-link {% if lang == 'en' %}active{% endif %}" href="/en/" style="font-size: 13px;width: 30px;">EN</a></li>
-            </ul>
-        </div>
-    </nav>
-    {% if messages %}
-        {% for message in messages %}
-            <div
-                {% if message.tags %}
-                    {% if message.tags == "error" %}
-                        class="alert alert-danger"
-                    {% else %}
-                        class="alert alert-{{ message.tags }}"
-                    {% endif %}
-                {% endif %}
-            >
-                {{ message }}
-            </div>
-        {% endfor %}
-    {% endif %}
+  <nav class="navbar navbar-dark navbar-expand-lg fixed-top" id="mainNav" style="background-color: rgb(33,37,41);">
+    <div class="container-fluid"><a href="{% url 'home_view' lang %}" style="max-width: 300px;width: 300px;"><img src="{% static 'img/logo.svg' %}" style="max-width: 300px;"></a><button data-toggle="collapse" data-target="#navbarResponsive"
+        class="navbar-toggler navbar-toggler-right" type="button" data-toogle="collapse" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="nav navbar-nav mx-auto text-uppercase">
+          <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="{% url 'home_view' lang %}#about">about</a></li>
+          <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="{% url 'home_view' lang %}#team">Contributors</a></li>
+          <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="{% url 'home_view' lang %}#services">Rules</a></li>
+          <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'scoreboard_view' lang 'choose' %}">Scoreboard</a></li>
+          <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="{% url 'home_view' lang %}#contact">Contact</a></li>
+        </ul>
+      </div>
+      <ul class="nav navbar-nav">
+        {% if user.is_authenticated %}
+        <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'profile_view' lang %}">{{ user.username }}</a></li>
+        <li class="nav-item" role="presentation"><a class="nav-link active" href="{% url 'disconnect_view' lang %}" style="margin-right: 20px;">Disconnect</a></li>
+        {% else %}
+        <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'login_view' lang %}">Login</a></li>
+        <li class="nav-item" role="presentation"><a class="nav-link active" href="{% url 'register_view' lang %}" style="margin-right: 20px;">Sign up</a></li>
+        {% endif %}
+        <li class="nav-item text-center" role="presentation"><a class="nav-link {% if lang == 'fr' %}active{% endif %} text-center" href="/fr/" style="font-size: 13px;width: 30px;">FR</a></li>
+        <li class="nav-item" role="presentation"><a class="nav-link {% if lang == 'nl' %}active{% endif %}" href="/nl/" style="font-size: 13px;width: 30px;">NL</a></li>
+        <li class="nav-item" role="presentation"><a class="nav-link {% if lang == 'en' %}active{% endif %}" href="/en/" style="font-size: 13px;width: 30px;">EN</a></li>
+      </ul>
+    </div>
+  </nav>
+  {% if messages %}
+  {% for message in messages %}
+  <div {% if message.tags %} {% if message.tags == "error" %} class="alert alert-danger" {% else %} class="alert alert-{{ message.tags }}" {% endif %} {% endif %}>
+    {{ message }}
+  </div>
+  {% endfor %}
+  {% endif %}
 
-    {% block content %}
-    {% endblock %}
-    <section id="sponsor" class="py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6 col-md-3"><a href="#"><img class="img-fluid d-block mx-auto" src="{% static 'img/Montcul.jpg' %}" style="height: 114px;"></a></div>
-                <div class="col-sm-6 col-md-3"><a href="#"><img class="img-fluid d-block mx-auto" src="{% static 'img/clients/designmodo.jpg' %}"></a></div>
-                <div class="col-sm-6 col-md-3"><a href="#"><img class="img-fluid d-block mx-auto" src="{% static 'img/clients/envato.jpg' %}"></a></div>
-                <div class="col-sm-6 col-md-3"><a href="#"><img class="img-fluid d-block mx-auto" src="{% static 'img/clients/themeforest.jpg' %}"></a></div>
-            </div>
+  {% block content %}
+  {% endblock %}
+  <section id="sponsor" class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 col-md-3"><a href="#"></a></div>
+        <div class="col-sm-6 col-md-3"><a href="#"></a></div>
+        <div class="col-sm-6 col-md-3"><a href="#"></a></div>
+        <div class="col-sm-6 col-md-3"><a href="#"></a></div>
+      </div>
+    </div>
+  </section>
+  <section id="contact" style="background-image:url('assets/img/map-image.png');">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="text-uppercase section-heading" style="margin-bottom: 75px;">Contact us</h2>
         </div>
-    </section>
-    <section id="contact" style="background-image: url({% static 'img/map-image.png' %});">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="text-uppercase section-heading">Contact us</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <form id="contactForm" name="contactForm" novalidate="novalidate">
+            <div class="form-row">
+              <div class="col col-md-6">
+                <div class="form-group"><input class="form-control" type="text" id="name" placeholder="Last name*" required=""><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
+                <div class="form-group"><input class="form-control" type="email" id="email" placeholder="Email *" required=""><small class="form-text text-danger help-block lead"></small></div>
+                <div class="form-group"><input class="form-control" type="tel" placeholder="Phone *" required=""><small class="form-text text-danger help-block lead"></small></div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group"><textarea class="form-control" id="message" placeholder="Your Message *" required=""></textarea><small class="form-text text-danger help-block lead"></small></div>
+              </div>
+              <div class="col">
+                <div class="clearfix"></div>
+              </div>
+              <div class="col-lg-12 text-center">
+                <div id="success"></div><button class="btn btn-primary btn-xl text-uppercase" id="sendMessageButton" type="submit">Send your message</button>
+              </div>
             </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <form id="contactForm" name="contactForm" novalidate="novalidate">
-                        <div class="form-row">
-                            <div class="col col-md-6">
-                                <div class="form-group"><input class="form-control" type="text" id="name" placeholder="Name *" required=""><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
-                                <div class="form-group"><input class="form-control" type="email" id="email" placeholder="Email *" required=""><small class="form-text text-danger help-block lead"></small></div>
-                                <div class="form-group"><input class="form-control" type="tel" placeholder="Phone *" required=""><small class="form-text text-danger help-block lead"></small></div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group"><textarea class="form-control" id="message" placeholder="Message *" required=""></textarea><small class="form-text text-danger help-block lead"></small></div>
-                            </div>
-                            <div class="col">
-                                <div class="clearfix"></div>
-                            </div>
-                            <div class="col-lg-12 text-center">
-                                <div id="success"></div><button class="btn btn-primary btn-xl text-uppercase" id="sendMessageButton" type="submit">Send Message</button></div>
-                        </div>
-                    </form>
-                </div>
-            </div>
+          </form>
         </div>
-    </section>
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4"><span class="copyright">Copyright&nbsp;©MONCUL</span></div>
-                <div class="col-md-4">
-                    <ul class="list-inline social-buttons">
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <ul class="list-inline quicklinks">
-                        <li class="list-inline-item"><a href="/">Change language&nbsp;</a></li>
-                        <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
-                        <li class="list-inline-item"><a href="#">Terms of Use</a></li>
-                    </ul>
-                </div>
-            </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 align-self-center">
+          <ul class="list-inline social-buttons">
+            <li class="list-inline-item"><a href="https://www.facebook.com/events/3124778680913570/"><i class="fa fa-facebook"></i></a></li>
+          </ul>
         </div>
-    </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-    <script src="{% static 'js/script.min.js' %}"></script>
+        <div class="col-md-4"></div>
+        <div class="col-md-4 align-self-center">
+          <ul class="list-inline quicklinks">
+            <li class="list-inline-item"><a href="index.html">Change language&nbsp;</a></li>
+            <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+            <li class="list-inline-item"><a href="#">Terms of Use</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+  <script src="{% static 'js/script.min.js' %}"></script>
 </body>
 
 </html>
