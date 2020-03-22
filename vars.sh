@@ -1,0 +1,10 @@
+export DEBUG=1
+export SECRET_KEY='lm79xwha@ys5#0nlxi9-kj@p65z_-7&m5c#^u4q2*$6^2$-p*1'
+export DJANGO_ALLOWED_HOSTS='localhost 127.0.0.1 [::1]'
+export SQL_ENGINE='django.db.backends.postgresql'
+export SQL_DATABASE='tournoi_fifa'
+export SQL_USER='covid19'
+export SQL_PASSWORD='***REMOVED***'
+export SQL_HOST='localhost'
+export SQL_PORT='5432'
+export DATABASE='postgres'
