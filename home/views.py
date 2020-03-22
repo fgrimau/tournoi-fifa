@@ -9,4 +9,4 @@ def home(request, lang=""):
     if lang == "":
         return lang_view(request)
 
-    return render(request, "index.html", locals())
+    return render(request, "index_{}.html".format(lang), locals())

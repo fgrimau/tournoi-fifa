@@ -8,4 +8,4 @@ def scoreboard_view(request, lang="", platform=""):
         return render(request, "choose_scoreboard.html", locals())
 
     poules = Poule.objects.filter(platform=platform)
-    return render(request, "scoreboard.html", locals())
+    return render(request, "scoreboard_{}.html".format(lang), locals())

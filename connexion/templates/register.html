@@ -7,7 +7,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-        <title>S'inscrire</title>
+        <title>Register</title>
         <meta name="description" content="Tournoi Fifa pour récolter des fonds contre le covid-19">
         <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
@@ -22,16 +22,16 @@
     <body>
         <div class="login-dark">
             <form method="post">
-                <h3 class="text-center">Inscription</h3>
+                <h3 class="text-center">Register</h3>
                 <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
                 {% csrf_token %}
                 {% bootstrap_form form show_label=False %}
                 {% buttons %}
-                    <button class="btn btn-primary btn-block" type="submit">S'inscrire</button>
+                    <button class="btn btn-primary btn-block" type="submit">Register</button>
                     <small>
                         <a href="/{{lang}}/">
                             <ion-icon name="arrow-back-outline"></ion-icon>
-                            retour
+                            back
                         </a>
                     </small>
                 {% endbuttons %}

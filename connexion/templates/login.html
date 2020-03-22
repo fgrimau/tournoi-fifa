@@ -7,7 +7,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-        <title>S'inscrire</title>
+        <title>login</title>
         <meta name="description" content="Tournoi Fifa pour récolter des fonds contre le covid-19">
         <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
@@ -22,21 +22,21 @@
     <body>
         <div class="login-dark">
             <form method="post">
-                <h2 class="text-center">Connexion</h2>
+                <h2 class="text-center">Login</h2>
                 <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
                 {% csrf_token %}
 
                 <div class="form-group">
-                    <input type="text" name="username" maxlength="150" class="form-control" placeholder="Nom d’utilisateur" id="id_username">
+                    <input type="text" name="username" maxlength="150" class="form-control" placeholder="Username" id="id_username">
                 <div class="form-group">
-                    <input type="password" name="password" maxlength="128" class="form-control" placeholder="Mot de passe" required id="id_password">
+                    <input type="password" name="password" maxlength="128" class="form-control" placeholder="Password" required id="id_password">
                 </div>
                 {% buttons %}
-                    <button class="btn btn-primary btn-block" type="submit">Se connecter</button>
+                    <button class="btn btn-primary btn-block" type="submit">Log in</button>
                     <small>
                         <a href="/{{lang}}/">
                             <ion-icon name="arrow-back-outline"></ion-icon>
-                            retour
+                            back
                         </a>
                     </small>
                 {% endbuttons %}
