@@ -10,7 +10,3 @@ def home(request, lang=""):
         return lang_view(request)
 
     return render(request, "index.html", locals())
-
-
-def scoreboard_view(request, lang=""):
-    return render(request, "scoreboard.html", locals())

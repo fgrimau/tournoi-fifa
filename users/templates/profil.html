@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block content %}
     <section id="profil">
         <div class="container">
@@ -13,7 +15,7 @@
         </div>
         <div class="row">
             <div class="col d-xl-flex align-items-xl-center" style="padding-right: 5%;padding-left: 5%;padding-bottom: 5%;">
-                <div style="width: 75%;"><img class="img-thumbnail bg-warning border rounded-0 shadow-sm" src="assets/img/43477020.jpg" style="max-width: 250px;"><span style="font-size: 30px;font-family: 'Droid Serif';font-weight: bold;">&nbsp;point : {{total_points}}</span></div>
+                <div style="width: 75%;"><img class="img-thumbnail bg-warning border rounded-0 shadow-sm" src="{% static 'img/43477020.jpg' %}" style="max-width: 250px;"><span style="font-size: 30px;font-family: 'Droid Serif';font-weight: bold;">&nbsp;points : {{user.profile.total_points}}</span></div>
             </div>
         </div>
         <div class="row" style="padding-bottom: 2%;">
@@ -31,12 +33,12 @@
                                 <th class="col-md-3">Date</th>
                             </tr>
                         </thead>
-                        {% for history_entry in user_history %}
+                        {% for history_entry in user.profile.history %}
                             <tbody>
                                 <tr>
                                     <td>{{ history_entry.winner.username }}</td>
                                     <td>{{ history_entry.looser.username }}</td>
-                                    <td>{{ history_entry.winner_points }}-{{ history_entry.looser_points }}</td>
+                                    <td>{{ history_entry.winner_points }} - {{ history_entry.looser_points }}</td>
                                     <td>{{ history_entry.date_played|date:"d/m/Y - G:i" }}</td>
                                 </tr>
                             </tbody>
