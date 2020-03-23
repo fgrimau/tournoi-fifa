@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block content %}
-<header class="masthead" style="background-image: url(&quot;assets/img/bg_index.jpg&quot;);">
+<header class="masthead" style="background-image: url(&quot;{% static 'img/bg_index.jpg' %}&quot;);">
   <div class="container">
     <div class="intro-text">
       <div class="intro-lead-in"><span>Bienvenue</span></div>
@@ -83,7 +83,7 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-4">
-        <div class="team-member"><img class="rounded-circle mx-auto" src="assets/img/43477020.jpg">
+        <div class="team-member"><img class="rounded-circle mx-auto" src="{% static 'img/43477020.jpg' %}">
           <h4>Morti</h4>
           <p class="text-muted">Lead Designer</p>
           <ul class="list-inline social-buttons">
@@ -92,13 +92,13 @@
         </div>
       </div>
       <div class="col-sm-4">
-        <div class="team-member"><img class="rounded-circle mx-auto" src="assets/img/yishen.jpg">
+        <div class="team-member"><img class="rounded-circle mx-auto" src="{% static 'img/yishen.jpg' %}">
           <h4>Yishen</h4>
           <p class="text-muted">Lead Comunication</p>
         </div>
       </div>
       <div class="col-sm-4">
-        <div class="team-member"><img class="rounded-circle mx-auto" src="assets/img/44365630.jpg">
+        <div class="team-member"><img class="rounded-circle mx-auto" src="{% static 'img/44365630.jpg' %}">
           <h4>Minigrim0</h4>
           <p class="text-muted">Lead Developer</p>
           <ul class="list-inline social-buttons">
