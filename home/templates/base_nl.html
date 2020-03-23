@@ -63,16 +63,6 @@
 
     {% block content %}
     {% endblock %}
-    <section id="sponsor" class="py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6 col-md-3"><a href="#"><img class="img-fluid d-block mx-auto" src="{% static 'img/Montcul.jpg' %}" style="height: 114px;"></a></div>
-                <div class="col-sm-6 col-md-3"><a href="#"><img class="img-fluid d-block mx-auto" src="{% static 'img/clients/designmodo.jpg' %}"></a></div>
-                <div class="col-sm-6 col-md-3"><a href="#"><img class="img-fluid d-block mx-auto" src="{% static 'img/clients/envato.jpg' %}"></a></div>
-                <div class="col-sm-6 col-md-3"><a href="#"><img class="img-fluid d-block mx-auto" src="{% static 'img/clients/themeforest.jpg' %}"></a></div>
-            </div>
-        </div>
-    </section>
     <section id="contact" style="background-image:url('{% static 'img/map-image.png' %}');">
         <div class="container">
             <div class="row">
@@ -117,7 +107,7 @@
                 </div>
                 <div class="col-md-4">
                     <ul class="list-inline quicklinks">
-                        <li class="list-inline-item"><a href="index.html">Taal veranderen&nbsp;</a></li>
+                        <li class="list-inline-item"><a href="{% url '/' %}">Taal veranderen&nbsp;</a></li>
                         <li class="list-inline-item"><a href="#">Privacybeleid</a></li>
                         <li class="list-inline-item"><a href="#">Gebruiksvoorwaarden</a></li>
                     </ul>
