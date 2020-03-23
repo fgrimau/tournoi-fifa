@@ -5,6 +5,7 @@ services:
     build:
       context: ./
       dockerfile: Dockerfile.prod
+    image: tournoififa_web:latest
     command: gunicorn tournoi_fifa.wsgi:application --bind 0.0.0.0:8000
     volumes:
       - static_volume:/home/app/web/static
@@ -14,20 +15,42 @@ services:
       - ./.env.prod
     depends_on:
       - db
+    networks:
+      - private
   db:
     image: postgres:12.0-alpine
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     env_file:
       - ./.env.prod.db
+    networks:
+      - private
   nginx:
     build: ./nginx
+    image: tournoififa_nginx:latest
     volumes:
       - static_volume:/home/app/web/static
-    ports:
-      - 1337:80
     depends_on:
       - web
+    deploy:
+      labels:
+        - traefik.frontend.rule=Host:fifa-covid19.be
+        - traefik.enable=true
+        - traefik.port=80
+        - traefik.tags=public
+        - traefik.docker.network=public
+        - traefik.redirectorservice.frontend.entryPoints=http
+        - traefik.redirectorservice.frontend.redirect.entryPoint=https
+        - traefik.webservice.frontend.entryPoints=https
+    networks:
+      - private
+      - public
+
+networks:
+  private:
+    driver: overlay
+  public:
+    external: true
 
 volumes:
   postgres_data:
