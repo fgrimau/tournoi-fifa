@@ -17,5 +17,7 @@ class CompleteProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = [
-            'psn_profile', 'xboxlive_profile', 'origin_profile',
+            'user', 'platform', 'identifiant', 'bio',
         ]
+
+        widgets = {'user': forms.HiddenInput()}

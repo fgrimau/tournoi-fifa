@@ -4,4 +4,5 @@ from django.contrib.auth.decorators import login_required
 
 @login_required(login_url="/en/users")
 def profile_view(request, lang=""):
+    should_be_dark = True
     return render(request, "profil_{}.html".format(lang), locals())
