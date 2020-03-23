@@ -2,12 +2,6 @@
 
 ## NIQUEZ VOUS C'EST CHIANT A INSTALLER
 
-### Requirements
-
-```
-postregsql
-```
-
 ### Installation
 
 ```
