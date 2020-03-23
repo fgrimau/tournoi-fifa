@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block content %}
-<header class="masthead" style="background-image: url(&quot;assets/img/bg_index.jpg&quot;);">
+<header class="masthead" style="background-image: url(&quot;{% static 'img/bg_index.jpg' %}&quot;);">
   <div class="container">
     <div class="intro-text">
       <div class="intro-lead-in"><span>Bienvenue</span></div>
@@ -69,7 +69,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="col"><img src="assets/img/90532334_204577250848565_6663031741243981824_n.jpg"></div>
+          <div class="col"><img src="{% static 'img/90532334_204577250848565_6663031741243981824_n.jpg' %}"></div>
           <div class="col"><i class="fa fa-hand-peace-o" style="color: rgb(254,209,54);font-size: 40px;"></i><span class="d-block"
               style="margin-top: 10px;margin-bottom: 10px;font-family: Montserrat, sans-serif;font-weight: bold;font-size: 18px;">PRIX</span>
             <p>Grâce à nos sponsors, différents prix seront distribués aux top joueurs de la compétition. Pour les autres, l’éternelle reconnaissance de toute la communauté !<br></p>
@@ -83,7 +83,7 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-4">
-        <div class="team-member"><img class="rounded-circle mx-auto" src="assets/img/43477020.jpg">
+        <div class="team-member"><img class="rounded-circle mx-auto" src="{% static 'img/43477020.jpg' %}">
           <h4>Morti</h4>
           <p class="text-muted">Lead Designer</p>
           <ul class="list-inline social-buttons">
@@ -92,13 +92,13 @@
         </div>
       </div>
       <div class="col-sm-4">
-        <div class="team-member"><img class="rounded-circle mx-auto" src="assets/img/yishen.jpg">
+        <div class="team-member"><img class="rounded-circle mx-auto" src="{% static 'img/yishen.jpg' %}">
           <h4>Yishen</h4>
           <p class="text-muted">Lead Comunication</p>
         </div>
       </div>
       <div class="col-sm-4">
-        <div class="team-member"><img class="rounded-circle mx-auto" src="assets/img/44365630.jpg">
+        <div class="team-member"><img class="rounded-circle mx-auto" src="{% static 'img/44365630.jpg' %}">
           <h4>Minigrim0</h4>
           <p class="text-muted">Lead Developer</p>
           <ul class="list-inline social-buttons">
