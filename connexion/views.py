@@ -13,6 +13,8 @@ def register_view(request, lang=""):
         form = UserForm(request.POST)
         if form.is_valid():  # Verify the data of the form
             user = form.save()
+            user.set_password(form.cleaned_data["password"])
+            user.save()
             return redirect("/{}".format(lang))
     else:
         form = UserForm
