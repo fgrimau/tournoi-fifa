@@ -24,9 +24,9 @@
                 data-toogle="collapse" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="nav navbar-nav mx-auto text-uppercase">
-                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="{% url 'home_view' lang %}#about">à propos</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="{% url 'home_view' lang %}#team">Contributeur</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="{% url 'home_view' lang %}#services">Règlement</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="{% url 'home_view' lang %}#about">Info</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="{% url 'home_view' lang %}#team">Contributeurs</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="{% url 'home_view' lang %}#services">Regels</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'scoreboard_view' lang 'choose' %}">Scoreboard</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="{% url 'home_view' lang %}#contact">Contact</a></li>
                 </ul>
@@ -34,7 +34,7 @@
             <ul class="nav navbar-nav">
                 {% if user.is_authenticated %}
                 <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'profile_view' lang %}">{{ user.username }}</a></li>
-                <li class="nav-item" role="presentation"><a class="nav-link active" href="{% url 'disconnect_view' lang %}" style="margin-right: 20px;">Déconnexion</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link active" href="{% url 'disconnect_view' lang %}" style="margin-right: 20px;">Uitloggen</a></li>
                 {% else %}
                 <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'login_view' lang %}">Login</a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link active" href="{% url 'register_view' lang %}" style="margin-right: 20px;">Sign up</a></li>
@@ -78,7 +78,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="text-uppercase section-heading">Contactez nous</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h3 class="section-subheading text-muted"></h3>
                 </div>
             </div>
             <div class="row">
@@ -107,7 +107,7 @@
     <footer>
         <div class="container">
             <div class="row">
-                <div class="col-md-4"><span class="copyright">Copyright&nbsp;©MONCUL</span></div>
+                <div class="col-md-4"><span class="copyright">Copyright&nbsp;©Fifa20-Covid19</span></div>
                 <div class="col-md-4">
                     <ul class="list-inline social-buttons">
                         <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -117,9 +117,9 @@
                 </div>
                 <div class="col-md-4">
                     <ul class="list-inline quicklinks">
-                        <li class="list-inline-item"><a href="index.html">Change language&nbsp;</a></li>
-                        <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
-                        <li class="list-inline-item"><a href="#">Terms of Use</a></li>
+                        <li class="list-inline-item"><a href="index.html">Taal veranderen&nbsp;</a></li>
+                        <li class="list-inline-item"><a href="#">Privacybeleid</a></li>
+                        <li class="list-inline-item"><a href="#">Gebruiksvoorwaarden</a></li>
                     </ul>
                 </div>
             </div>
