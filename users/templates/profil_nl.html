@@ -16,14 +16,16 @@
         <div class="col d-xl-flex align-items-xl-center" style="padding-top: 5%;padding-right: 5%;padding-bottom: 5%;padding-left: 5%;">
             <div style="width: 50%;">
                 <img class="img-thumbnail bg-warning border rounded-0 shadow-sm" src="{% static 'img/43477020.jpg' %}" style="max-width: 250px;">
-                <span style="font-size: 30px;font-family: 'Droid Serif';font-weight: bold;">&nbsp;Bio :
-                    {{user.profile.bio}}
+                <span style="font-size: 30px;font-family: 'Droid Serif';font-weight: bold;">&nbsp;Punten :
+                {{user.profile.total_points}}
                 </span>
             </div>
             <div style="width: 25%;">
-                <span style="font-size: 30px;font-family: 'Droid Serif';font-weight: bold;">&nbsp;Point :
-                    {{user.profile.total_points}}
-                </span>
+                <p>
+                    <span style="font-size: 20px;font-family: 'Droid Serif';font-weight: bold;">&nbsp;Bio :</span>
+                    <br>
+                    {{user.profile.bio}}
+                </p>
             </div>
             <div>
                 <a class="btn" role="button" data-toggle="modal" href="#payement" style="font-size: 30px;">
