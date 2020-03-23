@@ -56,4 +56,4 @@ class Profile(models.Model):
 
     @property
     def history(self):
-        return self.winner.all() | self.looser.all()
+        return self.user.winner.all() | self.user.looser.all()
