@@ -7,17 +7,25 @@ from matching.models import Poule
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
-    psn_profile = models.CharField(
-        max_length=150, default="none provided", verbose_name="Pseudo PSN")
-    xboxlive_profile = models.CharField(
-        max_length=150, default="none provided",
-        verbose_name="Pseudo XBoxLive")
-    origin_profile = models.CharField(
-        max_length=150, default="none provided", verbose_name="Pseudo Origin")
+    choices = (
+        ('a', 'PS4'),
+        ('b', 'XBOX'),
+    )
+
+    identifiant = models.CharField(
+        max_length=150, verbose_name="platform username")
+    platform = models.CharField(
+        max_length=1, default="a", choices=choices,
+        verbose_name="Platforme du joueur")
+
+    bio = models.TextField()
 
     poule = models.ForeignKey(
         Poule, on_delete=models.PROTECT,
-        related_name="pool_players", default=None)
+        related_name="pool_players", default=None,
+        null=True, blank=True)
+
+    paid = models.BooleanField(default=False)
 
     @property
     def total_points(self):

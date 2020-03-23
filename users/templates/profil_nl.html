@@ -8,15 +8,33 @@
         <div class="row">
             <div class="col-xl-2 offset-xl-11"><a href="#">Bewerk uw profiel</a></div>
             <div class="col-lg-12 text-center">
-                <h2 class="text-uppercase section-heading">Profil van {{ user.username }}</h2>
+                <h2 class="text-uppercase section-heading">Profiel van {{ user.username }}</h2>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col d-xl-flex align-items-xl-center" style="padding-top: 5%;padding-right: 5%;padding-bottom: 5%;padding-left: 5%;">
-            <div style="width: 75%;"><img class="img-thumbnail bg-warning border rounded-0 shadow-sm" src="{% static 'img/43477020.jpg' %}" style="max-width: 250px;"><span style="font-size: 30px;font-family: 'Droid Serif';font-weight: bold;">&nbsp;Punt :
-                    {{user.profile.total_points}}</span></div>
-            <div><a class="btn" role="button" data-toggle="modal" href="#payement" style="font-size: 30px;"><i class="fa fa-times" style="font-size: 30px;color: rgb(255,8,8);"></i>&nbsp;Betaald</a></div>
+            <div style="width: 50%;">
+                <img class="img-thumbnail bg-warning border rounded-0 shadow-sm" src="{% static 'img/43477020.jpg' %}" style="max-width: 250px;">
+                <span style="font-size: 30px;font-family: 'Droid Serif';font-weight: bold;">&nbsp;Bio :
+                    {{user.profile.bio}}
+                </span>
+            </div>
+            <div style="width: 25%;">
+                <span style="font-size: 30px;font-family: 'Droid Serif';font-weight: bold;">&nbsp;Point :
+                    {{user.profile.total_points}}
+                </span>
+            </div>
+            <div>
+                <a class="btn" role="button" data-toggle="modal" href="#payement" style="font-size: 30px;">
+                    {% if user.profile.paid %}
+                    <i class="fa fa-check" style="font-size: 30px;color: rgb(8,255,8);"></i>
+                    {% else %}
+                    <i class="fa fa-times" style="font-size: 30px;color: rgb(255,8,8);"></i>
+                    {% endif %}
+                    &nbsp;Betaald
+                </a>
+            </div>
         </div>
     </div>
     <div class="row" style="padding-bottom: 2%;">

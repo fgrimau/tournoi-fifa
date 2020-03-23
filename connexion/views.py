@@ -6,6 +6,7 @@ from django.contrib import messages
 from django.contrib.auth import logout
 
 from django.contrib.auth import authenticate, login
+from django.urls import reverse
 
 
 def register_view(request, lang=""):
@@ -15,7 +16,12 @@ def register_view(request, lang=""):
             user = form.save()
             user.set_password(form.cleaned_data["password"])
             user.save()
-            return redirect("/{}".format(lang))
+            user = authenticate(
+                username=form.cleaned_data["username"],
+                password=form.cleaned_data["password"])
+            login(request, user)
+            return redirect(
+                reverse("complete_registration", kwargs={'lang': lang}))
     else:
         form = UserForm
     return render(request, "register.html", locals())
@@ -25,10 +31,12 @@ def complete_profile_view(request, lang=""):
     if request.method == "POST":
         form = CompleteProfileForm(request.POST)
         if form.is_valid():  # Verify the data of the form
-            form.save()
+            profile = form.save()
+            profile.user = request.user
+            profile.save()
             return redirect("/")
     else:
-        form = CompleteProfileForm
+        form = CompleteProfileForm(initial={'user': request.user})
     return render(request, "register.html", locals())
 
 

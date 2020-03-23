@@ -23,69 +23,55 @@
 </head>
 
 <body id="page-top">
-    <nav class="navbar navbar-dark navbar-expand-lg fixed-top" id="mainNav" style="background-color: rgb(33,37,41);">
+    <nav class="navbar navbar-light navbar-expand-md fixed-top" {% if should_be_dark %}style="background-color: rgb(33, 37, 41)" {% endif %} id="mainNav">
         <div class="container-fluid">
             <ul class="nav navbar-nav">
                 <li class="nav-item" role="presentation">
-                    <a href="{% url 'home_view' lang %}" style="max-width: 300px;width: 300px;">
+                    <a class="nav-link active" href="{% url 'home_view' lang %}" style="width: 300px;max-width: 300px;">
                         <img src="{% static 'img/logo.svg' %}" style="max-width: 300px;">
-                    </a></li>
+                    </a>
+                </li>
             </ul>
-            <button data-toggle="collapse" data-target="#menu" class="navbar-toggler navbar-toggler-right" type="button"
-                data-toogle="collapse" aria-controls="navbarResponsive" aria-expanded="false"
-                aria-label="Toggle navigation"><i class="fa fa-bars"></i><span
-                    style="font-family: Montserrat, sans-serif;font-weight: bold;">&nbsp;Menu</span></button>
+            <button data-toggle="collapse" data-target="#menu" class="navbar-toggler navbar-toggler-right" type="button" data-toogle="collapse" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars"></i>
+                <span style="font-family: Montserrat, sans-serif;font-weight: bold;">&nbsp;Menu</span>
+            </button>
             <div class="collapse navbar-collapse" id="menu">
                 <ul class="nav navbar-nav mx-auto text-uppercase">
-                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger"
-                            href="{% url 'home_view' lang %}#about">à propos</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger"
-                            href="{% url 'home_view' lang %}#team">Contributeur</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger"
-                            href="{% url 'home_view' lang %}#services">Praktische informatie</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link"
-                            href="{% url 'scoreboard_view' lang 'choose' %}">Scoreboard</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger"
-                            href="{% url 'home_view' lang %}#contact">Contact</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="{% url 'home_view' lang %}#about">à propos</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="{% url 'home_view' lang %}#team">Contributeur</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="{% url 'home_view' lang %}#services">Infos pratiques</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'scoreboard_view' lang 'choose' %}">Scoreboard</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="{% url 'home_view' lang %}#contact">Contact</a></li>
                 </ul>
-                <span class="border rounded-0 border-warning navbar-text"
-                    style="color: #ffffff;font-family: Montserrat, sans-serif;">&nbsp;Inscrits : {inscrit}&nbsp;</span>
+                <span class="border rounded-0 border-warning navbar-text" style="color: #ffffff;font-family: Montserrat, sans-serif;">
+                    &nbsp;Inscrits : {inscrit}&nbsp;
+                </span>
             </div>
-            <button class="navbar-toggler navbar-toggler-right" data-toggle="collapse" type="button"
-                data-toogle="collapse" data-target="#login" aria-controls="navbarResponsive" aria-expanded="false"
-                aria-label="Toggle navigation"><i class="fa fa-bars"></i><span
-                    style="font-family: Montserrat, sans-serif;font-weight: bold;">&nbsp;Login</span></button>
-            <div class="collapse navbar-collapse" id="login" style="max-width: 167px;">
+            <button class="navbar-toggler navbar-toggler-right" data-toggle="collapse" type="button" data-toogle="collapse" data-target="#login" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars"></i>
+                <span style="font-family: Montserrat, sans-serif;font-weight: bold;">&nbsp;Login</span>
+            </button>
+            <div class="collapse navbar-collapse" id="login" style="max-width: 250px;">
                 <ul class="nav navbar-nav">
                     {% if user.is_authenticated %}
-                    <li class="nav-item" role="presentation"><a class="nav-link"
-                            href="{% url 'profile_view' lang %}">{{ user.username }}</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link active"
-                            href="{% url 'disconnect_view' lang %}" style="margin-right: 20px;">Uitloggen</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'profile_view' lang %}">{{ user.username }}</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link active" href="{% url 'disconnect_view' lang %}">Déconnexion</a></li>
                     {% else %}
-                    <li class="nav-item" role="presentation"><a class="nav-link"
-                            href="{% url 'login_view' lang %}">Login</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link active"
-                            href="{% url 'register_view' lang %}" style="margin-right: 20px;">Sign up</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'login_view' lang %}">Login</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link active" href="{% url 'register_view' lang %}">Sign up</a></li>
                     {% endif %}
-                    <button class="navbar-toggler navbar-toggler-right" data-toggle="collapse" type="button"
-                        data-toogle="collapse" data-target="#langue" aria-controls="navbarResponsive"
-                        aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i><span
-                            style="font-family: Montserrat, sans-serif;font-weight: bold;">&nbsp;
-                            Langue</span></button>
-                    <div class="collapse navbar-collapse" id="langue" style="max-width: 140px;">
-                        <ul class="nav navbar-nav">
-                            <li class="nav-item text-center" role="presentation"><a
-                                    class="nav-link {% if lang == 'fr' %}active{% endif %} text-center" href="/fr/"
-                                    style="font-size: 13px;width: 30px;">FR</a></li>
-                            <li class="nav-item" role="presentation"><a
-                                    class="nav-link {% if lang == 'nl' %}active{% endif %}" href="/nl/"
-                                    style="font-size: 13px;width: 30px;">NL</a></li>
-                            <li class="nav-item" role="presentation"><a
-                                    class="nav-link {% if lang == 'en' %}active{% endif %}" href="/en/"
-                                    style="font-size: 13px;width: 30px;">EN</a></li>
-                        </ul>
-                    </div>
+                </ul>
+            </div>
+            <button class="navbar-toggler navbar-toggler-right" data-toggle="collapse" type="button" data-toogle="collapse" data-target="#langue" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars"></i>
+                <span style="font-family: Montserrat, sans-serif;font-weight: bold;">&nbsp; Langue</span>
+            </button>
+            <div class="collapse navbar-collapse" id="langue" style="max-width: 140px;">
+                <ul class="nav navbar-nav">
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'home_view' 'fr' %}" style="font-size: 13px;">FR</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="{% url 'home_view' 'nl' %}" style="font-size: 13px;">NL</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'home_view' 'en' %}" style="font-size: 13px;">EN</a></li>
                 </ul>
             </div>
         </div>
