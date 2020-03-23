@@ -59,6 +59,9 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
                     "home/templates/",
+                    "connexion/templates/",
+                    "matching/templates/",
+                    "users/templates/",
                 ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -107,6 +110,8 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/

@@ -6,15 +6,14 @@ from django.contrib import messages
 from django.contrib.auth import logout
 
 from django.contrib.auth import authenticate, login
-from django.contrib.auth.models import User
 
 
 def register_view(request, lang=""):
     if request.method == "POST":
         form = UserForm(request.POST)
         if form.is_valid():  # Verify the data of the form
-            form.save()
-            return redirect("/")
+            user = form.save()
+            return redirect("/{}".format(lang))
     else:
         form = UserForm
     return render(request, "register.html", locals())
@@ -34,35 +33,22 @@ def complete_profile_view(request, lang=""):
 def login_view(request, lang=""):
     if request.method != "POST":
         return render(request, 'login.html', locals())
-    else:
-        form = request.POST
-        username = form["username"]
-        password = form["password"]
 
-        try:
-            user = authenticate(username=username, password=password)
-            if user:
-                login(request, user)
-                messages.add_message(
-                    request, messages.SUCCESS,
-                    "Rebonjour {}".format(request.user.first_name))
-                print("Kay")
-                return HttpResponseRedirect("/{}/".format(lang))
-            else:
-                print("noKay")
-                messages.add_message(
-                    request, messages.ERROR,
-                    "Vos identifiants ne correspondent à \
-                    aucun compte !")
-                return HttpResponseRedirect("/{}/".format(lang))
-        except Exception as e:
-            print("Error : ", e)
+    form = request.POST
+    username = form["username"]
+    password = form["password"]
 
-            messages.add_message(
-                request, messages.ERROR,
-                "Vos identifiants ne correspondent à \
-                aucun compte !")
+    user = authenticate(username=username, password=password)
+    if user is not None:
+        login(request, user)
         return HttpResponseRedirect("/{}/".format(lang))
+    else:
+        print("noKay")
+        messages.add_message(
+            request, messages.ERROR,
+            "Vos identifiants ne correspondent à \
+            aucun compte !")
+        return HttpResponseRedirect("/{}/users/login/".format(lang))
 
 
 def disconnect(request, lang=""):

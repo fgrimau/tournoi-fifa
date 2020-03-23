@@ -46,21 +46,6 @@
             </ul>
         </div>
     </nav>
-    {% if messages %}
-        {% for message in messages %}
-            <div
-                {% if message.tags %}
-                    {% if message.tags == "error" %}
-                        class="alert alert-danger"
-                    {% else %}
-                        class="alert alert-{{ message.tags }}"
-                    {% endif %}
-                {% endif %}
-            >
-                {{ message }}
-            </div>
-        {% endfor %}
-    {% endif %}
 
     {% block content %}
     {% endblock %}
