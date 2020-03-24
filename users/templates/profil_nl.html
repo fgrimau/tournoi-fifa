@@ -15,8 +15,8 @@
     <div class="row">
         <div class="col d-xl-flex align-items-xl-center" style="padding-top: 5%;padding-right: 5%;padding-bottom: 5%;padding-left: 5%;">
             <div style="width: 50%;">
-                <img class="img-thumbnail bg-warning border rounded-0 shadow-sm" src="{% static 'img/43477020.jpg' %}" style="max-width: 250px;">
-                <span style="font-size: 30px;font-family: 'Droid Serif';font-weight: bold;">&nbsp;Punten :
+                <img class="img-thumbnail bg-warning border rounded-0 shadow-sm" src="{{ user.profile.gravatar }}" style="width: 20%;max-width: 250px;">
+                <span style="font-size: 30px;font-family: 'Droid Serif';font-weight: bold;">&nbsp;Points :
                 {{user.profile.total_points}}
                 </span>
             </div>
