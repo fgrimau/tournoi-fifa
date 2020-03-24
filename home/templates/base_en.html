@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Home - Fifa corona tournament</title>
+    <title>Home - Fifa-Covid19 tournament</title>
     <meta name="description" content="Tournoi Fifa pour récolter des fonds contre le covid-19">
     <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
@@ -37,14 +37,14 @@
             </button>
             <div class="collapse navbar-collapse" id="menu">
                 <ul class="nav navbar-nav mx-auto text-uppercase">
-                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="{% url 'home_view' lang %}#about">à propos</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="{% url 'home_view' lang %}#team">Contributeur</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="{% url 'home_view' lang %}#services">Infos pratiques</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="{% url 'home_view' lang %}#about">About</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="{% url 'home_view' lang %}#team">Contributors</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="{% url 'home_view' lang %}#services">Practical information</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'scoreboard_view' lang 'choose' %}">Scoreboard</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="{% url 'home_view' lang %}#contact">Contact</a></li>
                 </ul>
                 <span class="border rounded-0 border-warning navbar-text" style="color: #ffffff;font-family: Montserrat, sans-serif;">
-                    &nbsp;Inscrits : {{ nb_inscrits }}&nbsp;
+                    &nbsp;Registered : {{ nb_inscrits }}&nbsp;
                 </span>
             </div>
             <button class="navbar-toggler navbar-toggler-right" data-toggle="collapse" type="button" data-toogle="collapse" data-target="#login" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -55,7 +55,7 @@
                 <ul class="nav navbar-nav">
                     {% if user.is_authenticated %}
                     <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'profile_view' lang %}">{{ user.username }}</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="{% url 'disconnect_view' lang %}">Déconnexion</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="{% url 'disconnect_view' lang %}">Log out</a></li>
                     {% else %}
                     <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'login_view' lang %}">Login</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link active" href="{% url 'register_view' lang %}">Sign up</a></li>
@@ -64,7 +64,7 @@
             </div>
             <button class="navbar-toggler navbar-toggler-right" data-toggle="collapse" type="button" data-toogle="collapse" data-target="#langue" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fa fa-bars"></i>
-                <span style="font-family: Montserrat, sans-serif;font-weight: bold;">&nbsp; Langue</span>
+                <span style="font-family: Montserrat, sans-serif;font-weight: bold;">&nbsp; Language</span>
             </button>
             <div class="collapse navbar-collapse" id="langue" style="max-width: 140px;">
                 <ul class="nav navbar-nav">
