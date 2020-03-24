@@ -37,14 +37,14 @@ messages_langs = {
     souhaitez, vous pouvez toujours \
     <a href='https://donate.kbs-frb.be/Brussel_UMC_SintPieter/~mon-don?_cv=1'>\
     faire un don supplémentaire</a>",
-    "already_paid_en": "Vous avez confirmé votre inscription ! Si vous le \
-    souhaitez, vous pouvez toujours \
+    "already_paid_en": "You have already confirmed your registration ! if you wish \
+    you can always \
     <a href='https://donate.kbs-frb.be/Brussel_UMC_SintPieter/~mon-don?_cv=1'>\
-    faire un don supplémentaire</a>",
-    "already_paid_nl": "Vous avez confirmé votre inscription ! Si vous le \
-    souhaitez, vous pouvez toujours \
+    make an additional donation</a>",
+    "already_paid_nl": "U heeft uw inschrijving bevestigd! Indeen gewenst \
+    kunt u altijd  \
     <a href='https://donate.kbs-frb.be/Brussel_UMC_SintPieter/~mon-don?_cv=1'>\
-    faire un don supplémentaire</a>",
+    een extra donatie doen</a>",
     "understood_fr": "Compris !",
     "understood_en": "Understood !",
     "understood_nl": "Begrepen !",
