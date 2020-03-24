@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+{% load static %}
+{% load bootstrap4 %}
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <title>login</title>
+        <meta name="description" content="Tournoi Fifa pour récolter des fonds contre le covid-19">
+        <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+        <link rel="stylesheet" href="{% static 'css/styles.min.css' %}">
+    </head>
+
+    <body>
+        <div class="login-dark text-center">
+            <div class="col-md-12">
+            </div>
+            <form action="/{{lang}}/">
+                <h2 class="text-center">Registration</h2>
+                <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
+                {% csrf_token %}
+                    {{ message|safe }}
+                {% buttons %}
+                    <button type="submit" class="btn btn-primary">{{ understood }}</a>
+                {% endbuttons %}
+            </form>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <script src="{% static 'js/script.min.js' %}"></script>
+        <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+    </body>
+
+</html>

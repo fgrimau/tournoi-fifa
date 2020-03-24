@@ -45,7 +45,7 @@
                     <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="{% url 'home_view' lang %}#contact">Contact</a></li>
                 </ul>
                 <span class="border rounded-0 border-warning navbar-text" style="color: #ffffff;font-family: Montserrat, sans-serif;">
-                    &nbsp;Inscrits : {inscrit}&nbsp;
+                    &nbsp;Inscrits : {{ nb_inscrits }}&nbsp;
                 </span>
             </div>
             <button class="navbar-toggler navbar-toggler-right" data-toggle="collapse" type="button" data-toogle="collapse" data-target="#login" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -76,14 +76,6 @@
             </div>
         </div>
     </nav>
-    {% if messages %}
-    {% for message in messages %}
-    <div {% if message.tags %} {% if message.tags == "error" %} class="alert alert-danger" {% else %}
-        class="alert alert-{{ message.tags }}" {% endif %} {% endif %}>
-        {{ message }}
-    </div>
-    {% endfor %}
-    {% endif %}
 
     {% block content %}
     {% endblock %}
