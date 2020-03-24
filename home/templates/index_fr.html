@@ -6,6 +6,23 @@
 <header class="masthead" style="background-image: url(&quot;{% static 'img/bg_index.jpg' %}&quot;);">
     <div class="container">
         <div class="intro-text" style="padding-top: 15%;padding-bottom: 10%;">
+            {% if messages %}
+            {% for message in messages %}
+            <div
+            {% if message.tags %}
+                {% if message.tags == "error" %}
+                    class="alert alert-danger"
+                {% else %}
+                    class="alert alert-{{ message.tags }}"
+                {% endif %}
+            {% endif %}>
+            {{ message }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            {% endfor %}
+            {% endif %}
             <div class="intro-lead-in"><span>Bienvenue</span></div>
             <div class="intro-heading text-uppercase"><span class="text-break">Tournoi&nbsp;<strong>caritatif &nbsp;fifa20</strong></span>
                 <div class="intro-lead-in" style="padding-top: 2%;"><span style="font-weight: normal;font-family: 'Roboto Slab', serif;font-style: normal;">xbox &amp; ps4</span></div>
