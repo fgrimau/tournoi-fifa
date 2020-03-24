@@ -21,3 +21,12 @@ class CompleteProfileForm(forms.ModelForm):
         ]
 
         widgets = {'user': forms.HiddenInput()}
+
+
+class ResetPasswordForm(forms.Form):
+    username = forms.CharField(max_length=150)
+
+
+class ResetPasswordForm2(forms.Form):
+    new_password = forms.CharField(max_length=150)
+    confirm_password = forms.CharField(max_length=150)

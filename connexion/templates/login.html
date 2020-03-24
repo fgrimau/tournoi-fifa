@@ -43,10 +43,19 @@
                 {% buttons %}
                     <button class="btn btn-primary btn-block" type="submit">Log in</button>
                     <small>
-                        <a href="/{{lang}}/">
-                            <ion-icon name="arrow-back-outline"></ion-icon>
-                            back
-                        </a>
+                        <div class="row">
+                            <div class="col-sm">
+                                <a href="/{{lang}}/">
+                                    <ion-icon name="arrow-back-outline"></ion-icon>
+                                    back
+                                </a>
+                            </div>
+                            <div class="col-sm">
+                                <a href="{% url 'forgotpass' lang %}">
+                                    Forgot password
+                                </a>
+                            </div>
+                        </div>
                     </small>
                 {% endbuttons %}
             </form>
