@@ -28,5 +28,7 @@ class ResetPasswordForm(forms.Form):
 
 
 class ResetPasswordForm2(forms.Form):
-    new_password = forms.CharField(max_length=150)
-    confirm_password = forms.CharField(max_length=150)
+    new_password = forms.CharField(
+        max_length=150, widget=forms.PasswordInput())
+    confirm_password = forms.CharField(
+        max_length=150, widget=forms.PasswordInput())

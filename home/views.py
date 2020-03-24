@@ -28,6 +28,9 @@ Si vous n'etes pas à l'origine de cette demande, ou que vous ne possédez pas d
     'email_sent_fr': "Un email a été envoyé à votre adresse {} (Vérifiez dans les spams !)",
     'email_sent_en': "An email has been sent to your address {} (Be sure to check your spams !)",
     'email_sent_nl': "An email has been sent to your address {} (Be sure to check your spams !)",
+    'not_conc_pass_fr': "Les mots de passe ne correspondent pas !",
+    'not_conc_pass_en': "The passwords differ !",
+    'not_conc_pass_nl': "The passwords differ !",
 }
 
 
@@ -65,7 +68,7 @@ def reset_password(request, lang=""):
                 messages_langs['mail_subj_reinit_{}'.format(lang)],
                 messages_langs[
                     'mail_mess_reinit_{}'.format(lang)
-                ].format("fifa-covid19.be/{}/reset/{}".format(
+                ].format("https://fifa-covid19.be/{}/reset/{}".format(
                     lang, passmod.link_key)
                 ),
                 'info@fifa-covid19.be',
@@ -95,6 +98,13 @@ def reset_password_form_view(request, lang="", token=""):
     if request.method == "POST":
         form = ResetPasswordForm2(request.POST)
         if form.is_valid():  # Verify the data of the form
+            if form.cleaned_data["new_password"] != form.cleaned_data["confirm_password"]:
+                messages.add_message(
+                    request, messages.ERROR,
+                    messages_langs["not_conc_pass_{}".format(lang)])
+                form = ResetPasswordForm2
+                title = "Reset Password"
+                return render(request, "register.html", locals())
             passmod.reinitialized = True
             passmod.save()
             user = passmod.user
