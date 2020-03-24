@@ -1,3 +1,4 @@
+import hashlib
 from django.contrib.auth.models import User
 from django.db import models
 
@@ -17,15 +18,19 @@ class Profile(models.Model):
     platform = models.CharField(
         max_length=1, default="a", choices=choices,
         verbose_name="Platforme du joueur")
-
     bio = models.TextField()
-
     poule = models.ForeignKey(
         Poule, on_delete=models.PROTECT,
         related_name="pool_players", default=None,
         null=True, blank=True)
 
     paid = models.BooleanField(default=False)
+
+    @property
+    def gravatar(self):
+        mail = self.user.email.lower().encode('utf8')
+        return "//www.gravatar.com/avatar/{}".format(
+            hashlib.md5(mail).hexdigest())
 
     @property
     def total_points(self):
