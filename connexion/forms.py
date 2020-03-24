@@ -10,7 +10,12 @@ class UserForm(forms.ModelForm):
         fields = [
             'username', 'first_name', 'last_name', 'email', 'password'
         ]
-        widgets = {'password': forms.PasswordInput()}
+        widgets = {
+            'password': forms.PasswordInput(),
+            'first_name': forms.TextInput(attrs={'required': True}),
+            'last_name': forms.TextInput(attrs={'required': True}),
+            'email': forms.EmailInput(attrs={'required': True}),
+        }
 
 
 class CompleteProfileForm(forms.ModelForm):
