@@ -5,7 +5,7 @@ services:
     build:
       context: ./
       dockerfile: Dockerfile.prod
-    image: tournoififa_web:latest
+    image: registry.rom1.xyz/tournoififa_web:latest
     command: gunicorn tournoi_fifa.wsgi:application --bind 0.0.0.0:8000
     volumes:
       - static_volume:/home/app/web/static
@@ -27,7 +27,7 @@ services:
       - private
   nginx:
     build: ./nginx
-    image: tournoififa_nginx:latest
+    image: registry.rom1.xyz/tournoififa_nginx:latest
     volumes:
       - static_volume:/home/app/web/static
     depends_on:
