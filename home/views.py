@@ -128,7 +128,7 @@ def contact_team(request, lang=""):
             ]
 
             send_mail(
-                'Nouveau message',
+                'Nouveau message via le formulaire de contact',
                 "Nouveau message via le formulaire de contact !\n\n\
 De : {} ({} - {})\nMessage : {}\n\n\nJosianne secrétaire".format(
                     form.cleaned_data["name"], form.cleaned_data["email"],
