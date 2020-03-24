@@ -16,7 +16,7 @@
                     class="alert alert-{{ message.tags }}"
                 {% endif %}
             {% endif %}>
-            {{ message }}
+            {{ message|safe }}
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
@@ -66,7 +66,7 @@
     <div class="row">
       <div class="col">
         <p style="font-style: normal;font-family: Montserrat, sans-serif;font-weight: bold;">Notre mission<br></p>
-        <p>Fort est de constater qu’en cette période de confinement, le nombre de joueurs en ligne sur toutes
+        <p>Force est de constater qu’en cette période de confinement, le nombre de joueurs en ligne sur toutes
           plateformes confondues a nettement augmenté. « Restez à la maison » étant le mot d’ordre, il est donc normal
           de trouver d’autres
           occupations

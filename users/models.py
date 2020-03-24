@@ -34,8 +34,10 @@ class Profile(models.Model):
 
     @property
     def total_points(self):
-        return self.user.winner.filter(null_match=False).count() * 3\
-            + self.user.winner.filter(null_match=True).count()
+        total = self.user.winner.filter(null_match=False).count() * 3
+        total += self.user.winner.filter(null_match=True).count()
+        total += self.user.looser.filter(null_match=True).count()
+        return total
 
     @property
     def total_victories(self):
@@ -70,3 +72,7 @@ class Profile(models.Model):
     @property
     def history(self):
         return self.user.winner.all() | self.user.looser.all()
+
+    @property
+    def get_diff(self):
+        return self.total_goals - self.total_got_goals

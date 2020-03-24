@@ -33,6 +33,12 @@ Als u niet de initiator van dit verzoek bent, of als u geen account op onze site
     'not_conc_pass_fr': "Les mots de passe ne correspondent pas !",
     'not_conc_pass_en': "The passwords differ !",
     'not_conc_pass_nl': "De wachtwoorden verschillen !",
+    'Not_completed_fr': "Vous n'avez pas fini de compléter votre profil, \
+    cliquez <a href='/fr/users/complete/'>ici</a> pour le compléter",
+    'Not_completed_en': "Your profile is not completed yet, \
+    click <a href='/en/users/complete/'>here</a> to complete it",
+    'Not_completed_nl': "Uw profiel is nog niet volledig ingevuld, \
+    klik <a href='/en/users/complete/'>hier</a> om het aan te vullen",
 }
 
 
@@ -45,6 +51,15 @@ def home(request, lang=""):
         return lang_view(request)
 
     nb_inscrits = User.objects.filter(is_staff=False).count()
+    if request.user.is_authenticated:
+        try:
+            print("user.profile =", request.user.profile)
+        except:
+            messages.add_message(
+                request,
+                messages.WARNING,
+                messages_langs["Not_completed_{}".format(lang)]
+            )
 
     return render(request, "index_{}.html".format(lang), locals())
 
