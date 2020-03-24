@@ -17,7 +17,7 @@ class Profile(models.Model):
         max_length=150, verbose_name="platform username")
     platform = models.CharField(
         max_length=1, default="a", choices=choices,
-        verbose_name="Platforme du joueur")
+        verbose_name="Player's platform")
     bio = models.TextField()
     poule = models.ForeignKey(
         Poule, on_delete=models.PROTECT,
