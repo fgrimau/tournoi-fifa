@@ -17,36 +17,36 @@
             </div>
             {% endfor %}
             {% endif %}
-            <div class="intro-lead-in"><span>Bienvenue</span></div>
-            <div class="intro-heading text-uppercase"><span class="text-break">Tournoi&nbsp;<strong>caritatif &nbsp;fifa20</strong></span>
+            <div class="intro-lead-in"><span>Welcome</span></div>
+            <div class="intro-heading text-uppercase"><span class="text-break">Charity&nbsp;<strong>Tournament &nbsp;fifa20</strong></span>
                 <div class="intro-lead-in" style="padding-top: 2%;"><span style="font-weight: normal;font-family: 'Roboto Slab', serif;font-style: normal;">xbox &amp; ps4</span></div>
             </div>
             <div class="intro-heading text-uppercase" style="margin-bottom: 0px;">
                 <div class="row">
                     <div class="col-6 col-md-3 mt-3">
                         <p id="jours" class="number-days m-0 rounded-top" style="color: #ffffff;font-size: 80px;"></p>
-                        <p class="text-countdown rounded-bottom" style="color: #214a80;background-color: #ffffff;">Jours</p>
+                        <p class="text-countdown rounded-bottom" style="color: #214a80;background-color: #ffffff;">Days</p>
                     </div>
                     <div class="col-6 col-md-3 mt-3">
                         <p id="heures" class="number-hours m-0 rounded-top"></p>
-                        <p class="text-countdown rounded-bottom" style="color: #214a80;background-color: #ffffff;">heures</p>
+                        <p class="text-countdown rounded-bottom" style="color: #214a80;background-color: #ffffff;">Hours</p>
                     </div>
                     <div class="col-6 col-md-3 mt-3">
                         <p id="minute" class="number-minutes m-0 rounded-top" style="color: #ffffff;"></p>
-                        <p class="text-countdown rounded-bottom" style="color: #214a80;background-color: #ffffff;">minutes</p>
+                        <p class="text-countdown rounded-bottom" style="color: #214a80;background-color: #ffffff;">Minutes</p>
                     </div>
                     <div class="col-6 col-md-3 mt-3">
                         <p id="secondes" class="number-seconds m-0 rounded-top" style="color: #ffffff;"></p>
-                        <p class="text-countdown rounded-bottom" style="background-color: #ffffff;color: #214a80;">secondes</p>
+                        <p class="text-countdown rounded-bottom" style="background-color: #ffffff;color: #214a80;">Seconds</p>
                     </div>
                     <div class="col-12 mb-3" style="margin-top: 2%;margin-bottom: 0px;">
-                        <div class="d-flex d-lg-flex justify-content-center align-items-center justify-content-lg-center align-items-lg-center"><span style="font-size: 40px;font-family: Montserrat, sans-serif;font-style: italic;">01 - 03 avril 2020</span></div>
-                        <div><span style="font-size: 40px;">FRAIS D'inscription : 6€&nbsp;</span><a href="#about" style="font-size: 40px;">*</a></div>
+                        <div class="d-flex d-lg-flex justify-content-center align-items-center justify-content-lg-center align-items-lg-center"><span style="font-size: 40px;font-family: Montserrat, sans-serif;font-style: italic;">01 - 03 April 2020</span></div>
+                        <div><span style="font-size: 40px;">Registration fees : 6€&nbsp;</span><a href="#about" style="font-size: 40px;">*</a></div>
                     </div>
                 </div>
             </div>
             {% if not user.is_authenticated %}
-            <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" role="button" href="{% url 'register_view' lang %}">Inscrivez-vous</a>
+            <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" role="button" href="{% url 'register_view' lang %}">Register</a>
             {% endif %}
         </div>
 </header>
@@ -62,11 +62,9 @@
         <p style="font-style: normal;font-family: Montserrat, sans-serif;font-weight: bold;">Our mission<br></p>
         <p>It is clear that during this period of confinement, the number of online players on all platforms combined
           increased significantly. "Stay at home" is the watchword, so it's normal to find other daily occupations.
-          Combining business
-          with pleasure, our mission is to provide additional help to the front lines affected by COVID19 through a
+          Combining business with pleasure, our mission is to provide additional help to the front lines affected by COVID19 through a
           FIFA20 competition.<br><br>Let's support them!<br><br>On the front line, hospitals are poised for a long
-          crisis and facing
-          a shortage of breathing machines. The CHU Saint Pierre hospital has already called for donations to benefit
+          crisis and facing a shortage of breathing machines. The CHU Saint Pierre hospital has already called for donations to benefit
           from new equipment given the lack of budget at present.<br><span
             style="background-color: rgb(254,209,54);"><br>As a mark of support for the entire medical
             profession,
@@ -81,7 +79,7 @@
               style="margin-top: 10px;margin-bottom: 10px;font-family: Montserrat, sans-serif;font-weight: bold;font-size: 18px;">QUALIFICATIONS<br></span>
             <span class="d-block"
               style="margin-top: 10px;margin-bottom: 10px;font-size: 17px;font-style: oblique;font-family: Montserrat, sans-serif;">01
-              - 02 april 2020<br></span>
+              - 02 April 2020<br></span>
             <p>Registered players will be invited to start the group phase comprising at least 3 games over a period of
               2 days. The first two of each hen will move on to the next phase.<br></p>
           </div>
@@ -99,11 +97,11 @@
         <div class="row">
             <div class="col">
               <span style="font-size: 26px;font-family: Montserrat, sans-serif;font-weight: bold;">
-                Faites un don
+                Donate
               </span>
               <p>
-                Vous ne participez pas mais vous voulez quand même apporter votre soutien?
-                Faites un don en cliquant ci-dessous !<br>
+                You do not participate but still want to support?
+                Make a donation by clicking below!<br>
               </p>
               <a href="https://donate.kbs-frb.be/Brussel_UMC_SintPieter/~mon-don?_cv=1">
                 <img src="{% static 'img/chu.svg' %}">
@@ -111,7 +109,7 @@
             </div>
             <div class="col"><i class="fa fa-hand-peace-o" style="color: rgb(254,209,54);font-size: 40px;"></i><span
               class="d-block"
-              style="margin-top: 10px;margin-bottom: 10px;font-family: Montserrat, sans-serif;font-weight: bold;font-size: 18px;">PRICE</span>
+              style="margin-top: 10px;margin-bottom: 10px;font-family: Montserrat, sans-serif;font-weight: bold;font-size: 18px;">PRIZE</span>
             <p>Thanks to our sponsors, different prizes will be distributed to the top players in the competition. For
               others, the eternal recognition of the whole community!<br></p>
           </div>
@@ -166,7 +164,7 @@
             class="fa fa-user-plus fa-stack-1x fa-inverse"></i></span>
         <h4 class="section-heading">Before</h4>
         <p class="text-muted">1) Add your opponent on the corresponding platform (PS4 / XBOX)<br>2) Go to "Online
-          Friendly" and start the match<br>3) Adjust the parameters *<br></p>
+          Friendly" and start the match<br>3) Adjust the parameters*<br></p>
       </div>
       <div class="col-md-4"><span class="text-center fa-stack fa-4x"><i
             class="fa fa-circle fa-stack-2x text-primary"></i><i
@@ -188,7 +186,7 @@
     <div class="row">
       <div class="col-auto text-center mx-auto">
         <a href="{% static 'pdfs/Fifa-Covid19-Rules.pdf' %}">
-          <button class="btn btn-primary" type="button">Full rules</button>
+          <button class="btn btn-primary" type="button">*Full rules</button>
         </a>
       </div>
     </div>
@@ -196,7 +194,7 @@
 </section>
 <section id="sponsor" class="py-5">
   <div class="container">
-    <h1 class="text-center" style="font-family: Montserrat, sans-serif;margin-bottom: 5%;">Ils parlent de nous</h1>
+    <h1 class="text-center" style="font-family: Montserrat, sans-serif;margin-bottom: 5%;">They talk about us</h1>
     <div class="row">
       <div class="col-sm-6 col-md-3"><a href="#"></a></div>
       <div class="col-sm-6 col-md-3 text-center"><a href="https://www.facebook.com/aesulb/"><img

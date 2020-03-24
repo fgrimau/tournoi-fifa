@@ -17,36 +17,36 @@
             </div>
             {% endfor %}
             {% endif %}
-            <div class="intro-lead-in"><span>Bienvenue</span></div>
-            <div class="intro-heading text-uppercase"><span class="text-break">Tournoi&nbsp;<strong>caritatif &nbsp;fifa20</strong></span>
+            <div class="intro-lead-in"><span>Welkom</span></div>
+            <div class="intro-heading text-uppercase"><span class="text-break">Liefdadigheidstoernooi&nbsp;<strong>&nbsp;fifa20</strong></span>
                 <div class="intro-lead-in" style="padding-top: 2%;"><span style="font-weight: normal;font-family: 'Roboto Slab', serif;font-style: normal;">xbox &amp; ps4</span></div>
             </div>
             <div class="intro-heading text-uppercase" style="margin-bottom: 0px;">
                 <div class="row">
                     <div class="col-6 col-md-3 mt-3">
                         <p id="jours" class="number-days m-0 rounded-top" style="color: #ffffff;font-size: 80px;"></p>
-                        <p class="text-countdown rounded-bottom" style="color: #214a80;background-color: #ffffff;">Jours</p>
+                        <p class="text-countdown rounded-bottom" style="color: #214a80;background-color: #ffffff;">Dagen</p>
                     </div>
                     <div class="col-6 col-md-3 mt-3">
                         <p id="heures" class="number-hours m-0 rounded-top"></p>
-                        <p class="text-countdown rounded-bottom" style="color: #214a80;background-color: #ffffff;">heures</p>
+                        <p class="text-countdown rounded-bottom" style="color: #214a80;background-color: #ffffff;">Uren</p>
                     </div>
                     <div class="col-6 col-md-3 mt-3">
                         <p id="minute" class="number-minutes m-0 rounded-top" style="color: #ffffff;"></p>
-                        <p class="text-countdown rounded-bottom" style="color: #214a80;background-color: #ffffff;">minutes</p>
+                        <p class="text-countdown rounded-bottom" style="color: #214a80;background-color: #ffffff;">Minuten</p>
                     </div>
                     <div class="col-6 col-md-3 mt-3">
                         <p id="secondes" class="number-seconds m-0 rounded-top" style="color: #ffffff;"></p>
-                        <p class="text-countdown rounded-bottom" style="background-color: #ffffff;color: #214a80;">secondes</p>
+                        <p class="text-countdown rounded-bottom" style="background-color: #ffffff;color: #214a80;">Seconden</p>
                     </div>
                     <div class="col-12 mb-3" style="margin-top: 2%;margin-bottom: 0px;">
-                        <div class="d-flex d-lg-flex justify-content-center align-items-center justify-content-lg-center align-items-lg-center"><span style="font-size: 40px;font-family: Montserrat, sans-serif;font-style: italic;">01 - 03 avril 2020</span></div>
-                        <div><span style="font-size: 40px;">FRAIS D'inscription : 6€&nbsp;</span><a href="#about" style="font-size: 40px;">*</a></div>
+                        <div class="d-flex d-lg-flex justify-content-center align-items-center justify-content-lg-center align-items-lg-center"><span style="font-size: 40px;font-family: Montserrat, sans-serif;font-style: italic;">01 - 03 april 2020</span></div>
+                        <div><span style="font-size: 40px;">Registratiekosten : 6€&nbsp;</span><a href="#about" style="font-size: 40px;">*</a></div>
                     </div>
                 </div>
             </div>
             {% if not user.is_authenticated %}
-            <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" role="button" href="{% url 'register_view' lang %}">Inscrivez-vous</a>
+            <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" role="button" href="{% url 'register_view' lang %}">Registreer</a>
             {% endif %}
         </div>
     </div>
@@ -102,11 +102,11 @@
         <div class="row">
             <div class="col">
               <span style="font-size: 26px;font-family: Montserrat, sans-serif;font-weight: bold;">
-                Faites un don
+                Doe een gift
               </span>
               <p>
-                Vous ne participez pas mais vous voulez quand même apporter votre soutien?
-                Faites un don en cliquant ci-dessous !<br>
+                U doet niet mee, maar wilt toch steunen?
+                Doe een gift door hieronder te klikken!<br>
               </p>
               <a href="https://donate.kbs-frb.be/Brussel_UMC_SintPieter/~mon-don?_cv=1">
                 <img src="{% static 'img/chu.svg' %}">
