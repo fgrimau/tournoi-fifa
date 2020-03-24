@@ -1,12 +1,23 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect
+from django.contrib import messages
+from django.contrib.auth import logout, authenticate, login
+from django.urls import reverse
 
 from connexion.forms import UserForm, CompleteProfileForm
-from django.contrib import messages
-from django.contrib.auth import logout
 
-from django.contrib.auth import authenticate, login
-from django.urls import reverse
+
+messages_langs = {
+    'wlcbck_fr': "Rebonjour {} !",
+    'wlcbck_en': "Welcome back {} !",
+    'wlcbck_nl': "Welcome back {} !",
+    'faillogin_fr': "Vos identifiants ne correspondent à aucun compte !",
+    'faillogin_en': "These login does not correspond to any account !",
+    'faillogin_nl': "These login does not correspond to any account !",
+    'disco_fr': "Vous avez été déconnecté",
+    'disco_en': "You've been disconnected",
+    'disco_nl': "You've been disconnected",
+}
 
 
 def register_view(request, lang=""):
@@ -63,49 +74,22 @@ def login_view(request, lang=""):
     user = authenticate(username=username, password=password)
     if user is not None:
         login(request, user)
-        if lang == "fr":
-            messages.add_message(
-                request, messages.SUCCESS,
-                "Rebonjour {} !".format(user.username))
-        if lang == "nl":
-            messages.add_message(
-                request, messages.SUCCESS,
-                "Welcome back {} !".format(user.username))
-        if lang == "en":
-            messages.add_message(
-                request, messages.SUCCESS,
-                "Welcome back {} !".format(user.username))
+        messages.add_message(
+            request, messages.SUCCESS,
+            messages_langs['wlcbck_{}'.format(lang)].format(user.username))
         return HttpResponseRedirect("/{}/".format(lang))
     else:
-        if lang == "fr":
-            messages.add_message(
-                request, messages.ERROR,
-                "Vos identifiants ne correspondent à aucun compte !")
-        if lang == "nl":
-            messages.add_message(
-                request, messages.ERROR,
-                "These login does not correspond to any account !")
-        if lang == "en":
-            messages.add_message(
-                request, messages.ERROR,
-                "These login does not correspond to any account !")
+        messages.add_message(
+            request, messages.ERROR,
+            messages_langs["faillogin_{}".format(lang)])
         return HttpResponseRedirect("/{}/users/login/".format(lang))
 
 
 def disconnect(request, lang=""):
     logout(request)
 
-    if lang == "fr":
-        messages.add_message(
-            request, messages.WARNING,
-            "Vous avez été déconnecté")
-    if lang == "nl":
-        messages.add_message(
-            request, messages.WARNING,
-            "You've been disconnected")
-    if lang == "en":
-        messages.add_message(
-            request, messages.WARNING,
-            "You've been disconnected")
+    messages.add_message(
+        request, messages.WARNING,
+        messages_langs["disco_{}".format(lang)])
 
     return HttpResponseRedirect("/{}/".format(lang))
