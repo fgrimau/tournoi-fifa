@@ -66,7 +66,8 @@ def register_view(request, lang=""):
                 reverse("complete_registration", kwargs={'lang': lang}))
     else:
         form = UserForm
-        title = "Register"
+
+    title = "Register"
     return render(request, "register.html", locals())
 
 
