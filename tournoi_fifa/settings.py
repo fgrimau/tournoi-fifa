@@ -52,6 +52,14 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+
+EMAIL_HOST = "ssl0.ovh.net"
+EMAIL_PORT = "465"
+EMAIL_HOST_USER = "info@fifa-covid19.be"
+EMAIL_HOST_PASSWORD = "***REMOVED***"
+EMAIL_USE_SSL = True
+
+
 ROOT_URLCONF = 'tournoi_fifa.urls'
 
 TEMPLATES = [
