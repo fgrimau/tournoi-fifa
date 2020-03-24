@@ -14,13 +14,13 @@ messages_langs = {
     'mail_subj_reinit_en': "Réinitialisation du mot de passe FIFA-COVID19",
     'mail_subj_reinit_nl': "Réinitialisation du mot de passe FIFA-COVID19",
     'mail_mess_reinit_fr': "Une demande de réinitialisation de votre mot de passe a été faite pour votre compte sur le site fifa-covid19.be\n \
-Pour continuer la réinitialisation, veuillez suivre ce lien {}.\n \
+Pour continuer la réinitialisation, veuillez suivre ce lien {}\n \
 Si vous n'etes pas à l'origine de cette demande, ou que vous ne possédez pas de compte sur notre site, vous pouvez ignorer ce message",
     'mail_mess_reinit_en': "Une demande de réinitialisation de votre mot de passe a été faite pour votre compte sur le site fifa-covid19.be\n \
-Pour continuer la réinitialisation, veuillez suivre ce lien {}.\n \
+Pour continuer la réinitialisation, veuillez suivre ce lien {}\n \
 Si vous n'etes pas à l'origine de cette demande, ou que vous ne possédez pas de compte sur notre site, vous pouvez ignorer ce message",
     'mail_mess_reinit_nl': "Une demande de réinitialisation de votre mot de passe a été faite pour votre compte sur le site fifa-covid19.be\n \
-Pour continuer la réinitialisation, veuillez suivre ce lien {}.\n \
+Pour continuer la réinitialisation, veuillez suivre ce lien {}\n \
 Si vous n'etes pas à l'origine de cette demande, ou que vous ne possédez pas de compte sur notre site, vous pouvez ignorer ce message",
     'no_user_fr': "Aucun compte n'a été trouvé avec ce pseudonyme !",
     'no_user_en': "No account was found with these credentials !",
