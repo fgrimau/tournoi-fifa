@@ -29,7 +29,7 @@ class Profile(models.Model):
     @property
     def gravatar(self):
         mail = self.user.email.lower().encode('utf8')
-        return "//www.gravatar.com/avatar/{}".format(
+        return "//www.gravatar.com/avatar/{}?s=500".format(
             hashlib.md5(mail).hexdigest())
 
     @property
