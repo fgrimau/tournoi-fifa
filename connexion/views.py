@@ -71,6 +71,7 @@ def complete_profile_view(request, lang=""):
                 reverse("final_registration", kwargs={'lang': lang}))
     else:
         form = CompleteProfileForm(initial={'user': request.user})
+        title = "Register"
     return render(request, "register.html", locals())
 
 
