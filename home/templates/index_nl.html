@@ -44,7 +44,11 @@
                         <div><span style="font-size: 40px;">FRAIS D'inscription : 6€&nbsp;</span><a href="#about" style="font-size: 40px;">*</a></div>
                     </div>
                 </div>
-            </div><a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" role="button" href="#services">Inscrivez-vous</a></div>
+            </div>
+            {% if not user.is_authenticated %}
+            <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" role="button" href="{% url 'register_view' lang %}">Inscrivez-vous</a>
+            {% endif %}
+        </div>
     </div>
 </header>
 <section id="about">
