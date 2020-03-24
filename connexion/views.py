@@ -33,6 +33,18 @@ messages_langs = {
     deze link <a href='https://donate.kbs-frb.be/Brussel_UMC_SintPieter/~mon-don?_cv=1'>\
     </a>, en stuur ons een screenshot / foto per e-mail naar het adres \
     <strong>info@fifa-covid19.be</strong>",
+    "already_paid_fr": "Vous avez confirmé votre inscription ! Si vous le \
+    souhaitez, vous pouvez toujours \
+    <a href='https://donate.kbs-frb.be/Brussel_UMC_SintPieter/~mon-don?_cv=1'>\
+    faire un don supplémentaire</a>",
+    "already_paid_en": "Vous avez confirmé votre inscription ! Si vous le \
+    souhaitez, vous pouvez toujours \
+    <a href='https://donate.kbs-frb.be/Brussel_UMC_SintPieter/~mon-don?_cv=1'>\
+    faire un don supplémentaire</a>",
+    "already_paid_nl": "Vous avez confirmé votre inscription ! Si vous le \
+    souhaitez, vous pouvez toujours \
+    <a href='https://donate.kbs-frb.be/Brussel_UMC_SintPieter/~mon-don?_cv=1'>\
+    faire un don supplémentaire</a>",
     "understood_fr": "Compris !",
     "understood_en": "Understood !",
     "understood_nl": "Begrepen !",
