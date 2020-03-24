@@ -17,6 +17,27 @@ messages_langs = {
     'disco_fr': "Vous avez été déconnecté",
     'disco_en': "You've been disconnected",
     'disco_nl': "You've been disconnected",
+    'payment_fr': "Afin de finaliser votre inscription, nous vous demandons de\
+    faire un don de minimum <strong>6€</strong> au CHU Saint-Pierre via \
+    <a href='https://donate.kbs-frb.be/Brussel_UMC_SintPieter/~mon-don?_cv=1'>\
+    ce lien</a>, et de \
+    nous envoyer un screenshot/une photo par mail à l'adresse \
+    <strong>info@fifa-covid19.be</strong>",
+    'payment_en': "Afin de finaliser votre inscription, nous vous demandons de\
+    faire un don de minimum <strong>6€</strong> au CHU Saint-Pierre via \
+    <a href='https://donate.kbs-frb.be/Brussel_UMC_SintPieter/~mon-don?_cv=1'>\
+    ce lien</a>, et de \
+    nous envoyer un screenshot/une photo par mail à l'adresse \
+    <strong>info@fifa-covid19.be</strong>",
+    'payment_nl': "Afin de finaliser votre inscription, nous vous demandons de\
+    faire un don de minimum <strong>6€</strong> au CHU Saint-Pierre via \
+    <a href='https://donate.kbs-frb.be/Brussel_UMC_SintPieter/~mon-don?_cv=1'>\
+    ce lien</a>, et de \
+    nous envoyer un screenshot/une photo par mail à l'adresse \
+    <strong>info@fifa-covid19.be</strong>",
+    "understood_fr": "Compris !",
+    "understood_en": "Understood !",
+    "understood_nl": "Undertsood !",
 }
 
 
@@ -53,13 +74,8 @@ def complete_profile_view(request, lang=""):
 
 
 def payment_view(request, lang=""):
-    message = "Afin de finaliser votre inscription, nous vous demandons de \
-        faire un don de minimum <strong>6€</strong> au CHU Saint-Pierre via \
-        <a href='https://donate.kbs-frb.be/Brussel_UMC_SintPieter/~mon-don?_cv=1'>\
-        ce lien</a>, et de \
-        nous envoyer un screenshot/une photo par mail à l'adresse \
-        <strong>info@fifa-covid19.be</strong>"
-    understood = "Compris !"
+    message = messages_langs["payment_{}".format(lang)]
+    understood = messages_langs["understood_{}".format(lang)]
     return render(request, "payment.html", locals())
 
 
