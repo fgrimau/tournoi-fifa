@@ -4,6 +4,7 @@ import home.views
 
 urlpatterns = [
     path('', home.views.home, name="home_view"),
+    path('contact/', home.views.contact_team, name="contact"),
     path('forgotpass/', home.views.reset_password, name="forgotpass"),
     path(
         'reset/<slug:token>/',

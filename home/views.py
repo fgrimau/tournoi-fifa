@@ -3,9 +3,11 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.core.mail import send_mail
 from django.http import HttpResponseRedirect
+from django.urls import reverse
+
 from connexion.forms import ResetPasswordForm, ResetPasswordForm2
 from connexion.models import Forgotten_pass
-from django.urls import reverse
+from home.forms import ContactForm
 import secrets
 
 
@@ -27,7 +29,7 @@ Als u niet de initiator van dit verzoek bent, of als u geen account op onze site
     'no_user_nl': "Geen account gevonden met dit pseudoniem !",
     'email_sent_fr': "Un email a été envoyé à votre adresse {} (Vérifiez dans les spams !)",
     'email_sent_en': "An email has been sent to your address {} (Be sure to check your spams !)",
-    'email_sent_nl': "Er is een e-mail verzonden naar uw adres {} (controleer spam!)",
+    'email_sent_nl': "Er is een e-mail verzonden naar uw adres {} (controleer spam !)",
     'not_conc_pass_fr': "Les mots de passe ne correspondent pas !",
     'not_conc_pass_en': "The passwords differ !",
     'not_conc_pass_nl': "De wachtwoorden verschillen !",
@@ -115,3 +117,22 @@ def reset_password_form_view(request, lang="", token=""):
         form = ResetPasswordForm2
         title = "Reset Password"
     return render(request, "register.html", locals())
+
+
+def contact_team(request, lang=""):
+    if request.method == "POST":
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            admin_mails = [
+                usr.email for usr in User.objects.filter(is_staff=True)
+            ]
+
+            send_mail(
+                'Nouveau message',
+                "Nouveau message via le formulaire de contact !\n\n\
+De : {} ({} - {})\nMessage : {}\n\n\nJosianne secrétaire".format(
+                    form.cleaned_data["name"], form.cleaned_data["email"],
+                    form.cleaned_data["phone"], form.cleaned_data["text"]),
+                "josianne.secretaire@fifa-covid19.be", admin_mails)
+
+    return HttpResponseRedirect("/{}/".format(lang))
