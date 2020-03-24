@@ -51,7 +51,7 @@
                 <i class="fa fa-bars"></i>
                 <span style="font-family: Montserrat, sans-serif;font-weight: bold;">&nbsp;Se connecter</span>
             </button>
-            <div class="collapse navbar-collapse" id="login" style="max-width: 250px;">
+            <div class="collapse navbar-collapse" id="login" style="max-width: 300px;">
                 <ul class="nav navbar-nav">
                     {% if user.is_authenticated %}
                         <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'profile_view' lang %}">{{ user.username }}</a></li>
