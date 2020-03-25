@@ -138,16 +138,12 @@ def contact_team(request, lang=""):
     if request.method == "POST":
         form = ContactForm(request.POST)
         if form.is_valid():
-            admin_mails = [
-                usr.email for usr in User.objects.filter(is_staff=True)
-            ]
-
             send_mail(
                 'Nouveau message via le formulaire de contact',
                 "Nouveau message via le formulaire de contact !\n\n\
 De : {} ({} - {})\nMessage : {}\n\n\nJosianne secrétaire".format(
                     form.cleaned_data["name"], form.cleaned_data["email"],
                     form.cleaned_data["phone"], form.cleaned_data["text"]),
-                "josianne.secretaire@fifa-covid19.be", admin_mails)
+                "josianne.secretaire@fifa-covid19.be", ["info@fifa-covid19.be",])
 
     return HttpResponseRedirect("/{}/".format(lang))
