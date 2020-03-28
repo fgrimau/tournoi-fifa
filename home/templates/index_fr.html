@@ -8,18 +8,11 @@
         <div class="intro-text" style="padding-top: 15%;padding-bottom: 10%;">
             {% if messages %}
             {% for message in messages %}
-            <div
-            {% if message.tags %}
-                {% if message.tags == "error" %}
-                    class="alert alert-danger"
-                {% else %}
-                    class="alert alert-{{ message.tags }}"
-                {% endif %}
-            {% endif %}>
-            {{ message|safe }}
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
+            <div {% if message.tags %} {% if message.tags == "error" %} class="alert alert-danger" {% else %} class="alert alert-{{ message.tags }}" {% endif %} {% endif %}>
+                {{ message|safe }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
             {% endfor %}
             {% endif %}
@@ -46,7 +39,8 @@
                         <p class="text-countdown rounded-bottom" style="background-color: #ffffff;color: #214a80;">Secondes</p>
                     </div>
                     <div class="col-12 mb-3" style="margin-top: 2%;margin-bottom: 0px;">
-                        <div class="d-flex d-lg-flex justify-content-center align-items-center justify-content-lg-center align-items-lg-center"><span style="font-size: 40px;font-family: Montserrat, sans-serif;font-style: italic;">01 - 03 avril 2020</span></div>
+                        <div class="d-flex d-lg-flex justify-content-center align-items-center justify-content-lg-center align-items-lg-center"><span style="font-size: 40px;font-family: Montserrat, sans-serif;font-style: italic;">01 - 03 avril
+                                2020</span></div>
                         <div><span style="font-size: 40px;">FRAIS D'inscription : 6€&nbsp;</span><a href="#about" style="font-size: 40px;">*</a></div>
                     </div>
                 </div>
@@ -57,168 +51,173 @@
         </div>
 </header>
 <section id="about">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12 text-center">
-        <h2 class="text-uppercase" style="padding-bottom: 8%;">à propos</h2>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <p style="font-style: normal;font-family: Montserrat, sans-serif;font-weight: bold;">Notre mission<br></p>
-        <p>Force est de constater qu’en cette période de confinement, le nombre de joueurs en ligne sur toutes
-          plateformes confondues a nettement augmenté. « Restez à la maison » étant le mot d’ordre, il est donc normal
-          de trouver d’autres
-          occupations
-          journalières. Alliant l’utile à l’agréable, notre mission est d’apporter une aide supplémentaire aux premières
-          lignes touchées par le COVID19 au travers d’une compétition FIFA20. <br><br>Soutenons-les !<br><br>En première
-          ligne,
-          les hôpitaux s’apprêtent à traverser une longue crise et affronter un manque de machines respiratoires.
-          L’hôpital CHU Saint Pierre a déjà fait un appel aux dons pour pouvoir bénéficier de nouveaux équipements étant
-          donné le manque
-          de budget à l’heure actuelle. <br><span style="background-color: rgb(254,209,54);"><br>Comme
-            marque de soutien à l’ensemble du corps médical, nous reverserons l’intégralité des frais
-            d’inscription perçus à CHU Saint Pierre.<br><br></span>Ce simple petit geste ne représente peut-être
-          pas grand-chose à vos yeux mais apporter tous ensemble notre pierre à l’édifice peut créer un impact quel
-          qu’il soit.<br><br></p>
-      </div>
-      <div class="col" style="padding-top: 2%;margin-left: 5%;">
-        <div class="row row-cols-2">
-          <div class="col"><i class="fa fa-trophy" style="color: rgb(254,209,54);font-size: 40px;"></i><span
-              class="d-block"
-              style="margin-top: 10px;margin-bottom: 10px;font-family: Montserrat, sans-serif;font-weight: bold;font-size: 18px;">QUALIFICATIONS<br></span>
-            <span class="d-block"
-              style="margin-top: 10px;margin-bottom: 10px;font-size: 17px;font-style: oblique;font-family: Montserrat, sans-serif;">01
-              - 02 avril 2020<br></span>
-            <p>Les joueurs inscrits seront invités à débuter la phase de poule comprenant au minimum 3 matchs sur une
-              durée de 2 jours. Les deux premiers de chaque poule passeront à la phase suivante. <br></p>
-          </div>
-          <div class="col"><i class="fa fa-trophy" style="color: rgb(254,209,54);font-size: 40px;"></i><span
-              class="d-block"
-              style="margin-top: 10px;margin-bottom: 10px;font-family: Montserrat, sans-serif;font-weight: bold;font-size: 18px;">TABLEAU
-              FINAL<br></span>
-            <span class="d-block"
-              style="margin-top: 10px;margin-bottom: 10px;font-size: 17px;font-family: Montserrat, sans-serif;font-style: oblique;">03
-              avril 2020<br></span>
-            <p>Les joueurs qualifiés seront répartis de manière fortuite dans le tableau final. Les matchs comporteront
-              cette fois-ci prolongations et pénaltys étant donné le caractère « élimination directe » de cette phase.
-              <br></p>
-          </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="text-uppercase" style="padding-bottom: 8%;">à propos</h2>
+            </div>
         </div>
         <div class="row">
-          <div class="col">
-            <span style="font-size: 26px;font-family: Montserrat, sans-serif;font-weight: bold;">
-              Faites un don
-            </span>
-            <p>
-              Vous ne participez pas mais vous voulez quand même apporter votre soutien?
-              Faites un don en cliquant ci-dessous !<br>
-            </p>
-            <a href="https://donate.kbs-frb.be/Brussel_UMC_SintPieter/~mon-don?_cv=1">
-              <img src="{% static 'img/chu.svg' %}">
-            </a>
-          </div>
-          <div class="col">
-            <i class="fa fa-hand-peace-o" style="color: rgb(254,209,54);font-size: 40px;"></i>
-            <span class="d-block" style="margin-top: 10px;margin-bottom: 10px;font-family: Montserrat, sans-serif;font-weight: bold;font-size: 18px;">
-              PRIX
-            </span>
-            <p>
-              Grâce à nos sponsors, différents prix seront distribués aux top joueurs de la compétition. Pour les
-              autres, l’éternelle reconnaissance de toute la communauté !<br>
-            </p>
-          </div>
+            <div class="col">
+                <p style="font-style: normal;font-family: Montserrat, sans-serif;font-weight: bold;">Notre mission<br></p>
+                <p>Force est de constater qu’en cette période de confinement, le nombre de joueurs en ligne sur toutes
+                    plateformes confondues a nettement augmenté. « Restez à la maison » étant le mot d’ordre, il est donc normal
+                    de trouver d’autres
+                    occupations
+                    journalières. Alliant l’utile à l’agréable, notre mission est d’apporter une aide supplémentaire aux premières
+                    lignes touchées par le COVID19 au travers d’une compétition FIFA20. <br><br>Soutenons-les !<br><br>En première
+                    ligne,
+                    les hôpitaux s’apprêtent à traverser une longue crise et affronter un manque de machines respiratoires.
+                    L’hôpital CHU Saint Pierre a déjà fait un appel aux dons pour pouvoir bénéficier de nouveaux équipements étant
+                    donné le manque
+                    de budget à l’heure actuelle. <br><span style="background-color: rgb(254,209,54);"><br>Comme
+                        marque de soutien à l’ensemble du corps médical, nous reverserons l’intégralité des frais
+                        d’inscription perçus à CHU Saint Pierre.<br><br></span>Ce simple petit geste ne représente peut-être
+                    pas grand-chose à vos yeux mais apporter tous ensemble notre pierre à l’édifice peut créer un impact quel
+                    qu’il soit.<br><br></p>
+            </div>
+            <div class="col" style="padding-top: 2%;margin-left: 5%;">
+                <div class="row row-cols-2">
+                    <div class="col"><i class="fa fa-trophy" style="color: rgb(254,209,54);font-size: 40px;"></i><span class="d-block"
+                            style="margin-top: 10px;margin-bottom: 10px;font-family: Montserrat, sans-serif;font-weight: bold;font-size: 18px;">QUALIFICATIONS<br></span>
+                        <span class="d-block" style="margin-top: 10px;margin-bottom: 10px;font-size: 17px;font-style: oblique;font-family: Montserrat, sans-serif;">01
+                            - 02 avril 2020<br></span>
+                        <p>Les joueurs inscrits seront invités à débuter la phase de poule comprenant au minimum 3 matchs sur une
+                            durée de 2 jours. Les deux premiers de chaque poule passeront à la phase suivante. <br></p>
+                    </div>
+                    <div class="col"><i class="fa fa-trophy" style="color: rgb(254,209,54);font-size: 40px;"></i><span class="d-block"
+                            style="margin-top: 10px;margin-bottom: 10px;font-family: Montserrat, sans-serif;font-weight: bold;font-size: 18px;">TABLEAU
+                            FINAL<br></span>
+                        <span class="d-block" style="margin-top: 10px;margin-bottom: 10px;font-size: 17px;font-family: Montserrat, sans-serif;font-style: oblique;">03
+                            avril 2020<br></span>
+                        <p>Les joueurs qualifiés seront répartis de manière fortuite dans le tableau final. Les matchs comporteront
+                            cette fois-ci prolongations et pénaltys étant donné le caractère « élimination directe » de cette phase.
+                            <br></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <span style="font-size: 26px;font-family: Montserrat, sans-serif;font-weight: bold;">
+                            Faites un don
+                        </span>
+                        <p>
+                            Vous ne participez pas mais vous voulez quand même apporter votre soutien?
+                            Faites un don en cliquant ci-dessous !<br>
+                        </p>
+                        <a href="https://donate.kbs-frb.be/Brussel_UMC_SintPieter/~mon-don?_cv=1">
+                            <img src="{% static 'img/chu.svg' %}">
+                        </a>
+                    </div>
+                    <div class="col">
+                        <i class="fa fa-hand-peace-o" style="color: rgb(254,209,54);font-size: 40px;"></i>
+                        <span class="d-block" style="margin-top: 10px;margin-bottom: 10px;font-family: Montserrat, sans-serif;font-weight: bold;font-size: 18px;">
+                            PRIX
+                        </span>
+                        <p>
+                            Les trois premières places du tournoi se verront respectivement attribuées un bon cadeau Amazon de 50€, 25€ et de 15€*
+                            <br>
+                            <small>
+                                *L’organisation se réserve le droit d’adapter les prix si le tournoi n’atteint pas 100 joueurs inscrits.
+                            </small>
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </section>
 <section id="team" class="bg-light">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-4">
-        <div class="team-member"><img class="rounded-circle mx-auto" src="https://www.gravatar.com/avatar/18a27f3ba520c4fdb0a1f4b0bac4f846?s=500">
-          <h4>Morti</h4>
-          <p class="text-muted">Lead Designer</p>
-          <ul class="list-inline social-buttons">
-            <li class="list-inline-item"><a href="https://github.com/Mortinat"><i
-                  class="fa fa-github d-xl-flex justify-content-xl-center align-items-xl-center"
-                  style="font-size: 29px;width: 40px;height: 40px;"></i></a></li>
-          </ul>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="team-member"><img class="rounded-circle mx-auto" src="https://www.gravatar.com/avatar/18a27f3ba520c4fdb0a1f4b0bac4f846?s=500">
+                    <h4>Morti</h4>
+                    <p class="text-muted">Lead Designer</p>
+                    <ul class="list-inline social-buttons">
+                        <li class="list-inline-item"><a href="https://github.com/Mortinat"><i class="fa fa-github d-xl-flex justify-content-xl-center align-items-xl-center" style="font-size: 29px;width: 40px;height: 40px;"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="team-member"><img class="rounded-circle mx-auto" src="{% static 'img/yishen.jpg' %}">
+                    <h4>Yishen</h4>
+                    <p class="text-muted">Lead Comunication</p>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="team-member"><img class="rounded-circle mx-auto" src="http://www.gravatar.com/avatar/7386f631d26a9fde6ec1571f899f2465?s=500">
+                    <h4>Minigrim0</h4>
+                    <p class="text-muted">Lead Developer</p>
+                    <ul class="list-inline social-buttons">
+                        <li class="list-inline-item"><a href="https://github.com/fgrimau"><i class="fa fa-github d-xl-flex justify-content-xl-center align-items-xl-center" style="font-size: 29px;width: 40px;height: 40px;"></i></a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="team-member"><img class="rounded-circle mx-auto" src="{% static 'img/yishen.jpg' %}">
-          <h4>Yishen</h4>
-          <p class="text-muted">Lead Comunication</p>
-        </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="team-member"><img class="rounded-circle mx-auto" src="http://www.gravatar.com/avatar/7386f631d26a9fde6ec1571f899f2465?s=500">
-          <h4>Minigrim0</h4>
-          <p class="text-muted">Lead Developer</p>
-          <ul class="list-inline social-buttons">
-            <li class="list-inline-item"><a href="https://github.com/fgrimau"><i
-                  class="fa fa-github d-xl-flex justify-content-xl-center align-items-xl-center"
-                  style="font-size: 29px;width: 40px;height: 40px;"></i></a></li>
-          </ul>
-        </div>
-      </div>
     </div>
-  </div>
 </section>
 <section id="services">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12 text-center">
-        <h2 class="text-uppercase section-heading">Règlement</h2>
-      </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="text-uppercase section-heading">Règlement</h2>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-md-4"><span class="fa-stack fa-4x"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-user-plus fa-stack-1x fa-inverse"></i></span>
+                <h4 class="section-heading">Avant</h4>
+                <p class="text-muted">1) Ajouter votre adversaire sur la plateforme correspondante (PS4/XBOX)<br>2) Se rendre
+                    dans « Amical en ligne » et lancer le match<br>3) Régler les paramètres*<br></p>
+            </div>
+            <div class="col-md-4"><span class="text-center fa-stack fa-4x"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="material-icons d-flex justify-content-center align-items-center fa-stack-1x fa-inverse"
+                        style="height: 128px;font-size: 64px;">timer</i></span>
+                <h4 class="section-heading">Pendant</h4>
+                <p class="text-muted">Si un joueur quitte un match avant son terme, la partie est remportée par le joueur
+                    adverse par forfait avec le score de 3-0.<br></p>
+            </div>
+            <div class="col-md-4"><span class="fa-stack fa-4x"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-file-image-o d-xl-flex justify-content-xl-center align-items-xl-center fa-stack-1x fa-inverse"
+                        style="height: 128px;"></i></span>
+                <h4 class="section-heading">Après</h4>
+                <p class="text-muted">Le gagnant envoie une photo de l’écran de fin de match contenant le score final ainsi que
+                    l’ID des deux joueurs à info@fifa-covid19.be <br>Veillez à bien vérifier le score sur votre profil dans la
+                    rubrique « Historique
+                    ».<br></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-auto text-center mx-auto">
+                <a href="{% static 'pdfs/Fifa-Covid19-Regles.pdf' %}">
+                    <button class="btn btn-primary" type="button">*Règlement complet</button>
+                </a>
+            </div>
+        </div>
     </div>
-    <div class="row text-center">
-      <div class="col-md-4"><span class="fa-stack fa-4x"><i class="fa fa-circle fa-stack-2x text-primary"></i><i
-            class="fa fa-user-plus fa-stack-1x fa-inverse"></i></span>
-        <h4 class="section-heading">Avant</h4>
-        <p class="text-muted">1) Ajouter votre adversaire sur la plateforme correspondante (PS4/XBOX)<br>2) Se rendre
-          dans « Amical en ligne » et lancer le match<br>3) Régler les paramètres*<br></p>
-      </div>
-      <div class="col-md-4"><span class="text-center fa-stack fa-4x"><i
-        class="fa fa-circle fa-stack-2x text-primary"></i><i
-        class="material-icons d-flex justify-content-center align-items-center fa-stack-1x fa-inverse"
-        style="height: 128px;font-size: 64px;">timer</i></span>
-        <h4 class="section-heading">Pendant</h4>
-        <p class="text-muted">Si un joueur quitte un match avant son terme, la partie est remportée par le joueur
-          adverse par forfait avec le score de 3-0.<br></p>
-      </div>
-      <div class="col-md-4"><span class="fa-stack fa-4x"><i class="fa fa-circle fa-stack-2x text-primary"></i><i
-            class="fa fa-file-image-o d-xl-flex justify-content-xl-center align-items-xl-center fa-stack-1x fa-inverse"
-            style="height: 128px;"></i></span>
-        <h4 class="section-heading">Après</h4>
-        <p class="text-muted">Le gagnant envoie une photo de l’écran de fin de match contenant le score final ainsi que
-          l’ID des deux joueurs à info@fifa-covid19.be <br>Veillez à bien vérifier le score sur votre profil dans la
-          rubrique « Historique
-          ».<br></p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-auto text-center mx-auto">
-          <a href="{% static 'pdfs/Fifa-Covid19-Regles.pdf' %}">
-            <button class="btn btn-primary" type="button">*Règlement complet</button>
-          </a>
-      </div>
-    </div>
-  </div>
 </section>
 <section id="sponsor" class="py-5">
-  <div class="container">
-    <h1 class="text-center" style="font-family: Montserrat, sans-serif;margin-bottom: 5%;">Ils parlent de nous</h1>
-    <div class="row">
-      <div class="col-sm-6 col-md-3"><a href="#"></a></div>
-      <div class="col-sm-6 col-md-3 text-center"><a href="https://www.facebook.com/aesulb/"><img
-            src="{% static 'img/ulb_esport.png' %}" style="width: 75%;" /></a></div>
-      <div class="col-sm-6 col-md-3 text-center"><a href="https://www.facebook.com/Sport.CdS.ULB/"><img
-            src="{% static 'img/cds.jpg' %}" style="width: 75%;" /></a></div>
-      <div class="col-sm-6 col-md-3"><a href="#"></a></div>
+    <div class="container">
+        <h1 class="text-center" style="font-family: Montserrat, sans-serif;margin-bottom: 5%;">Ils parlent de nous</h1>
+        <div class="row">
+            <div class="col-sm-6 col-md-3 text-center">
+                <a href="https://www.facebook.com/Sport.CdS.ULB/">
+                    <img src="{% static 'img/cds.jpg' %}" style="width: 75%;" />
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-3 text-center">
+                <a href="https://aesulb.be/">
+                    <img src="{% static 'img/ulb_esport.png' %}" style="width: 75%;" />
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-3 text-center">
+                <a href="https://www.dhnet.be/sports/omnisports/esport">
+                    <img src="{% static 'img/dhnet.png' %}" style="width: 75%;" />
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-3 text-center">
+                <a href="https://www.facebook.com/CercleMagellan/">
+                    <img src="{% static 'img/umons.png' %}" style="width: 75%;" />
+                </a>
+            </div>
+        </div>
     </div>
-  </div>
 </section>
 {% endblock %}
