@@ -17,22 +17,20 @@ messages_langs = {
     'disco_fr': "Vous avez été déconnecté",
     'disco_en': "You've been disconnected",
     'disco_nl': "Je bent verbroken",
-    'payment_fr': "Afin de finaliser votre inscription, nous vous demandons de\
-    faire un don de minimum <strong>6€</strong> au CHU Saint-Pierre via \
+    'payment_fr': "Inscription validée ! Et les frais d'inscription? Vous donnez \
+     <strong>ce que vous voulez ! </strong> Ce petit geste compte énormément pour le CHU Saint-Pierre. \
     <a href='https://donate.kbs-frb.be/Brussel_UMC_SintPieter/~mon-don?_cv=1'>\
-    ce lien</a>, et de \
-    nous envoyer un screenshot/une photo par mail à l'adresse \
-    <strong>info@fifa-covid19.be</strong>",
-    'payment_en': "In order to finalize your registration, we ask you to \
-    make a minimum donation of <strong>6€</strong> at CHU Saint-Pierre via \
+    Je veux les soutenir </a> ",
+
+    'payment_en': "Registration validated ! What about the registration fees ? You give \
+    <strong>What you want ! </strong> This little gesture is very important to the CHU Saint-Pierre. \
     <a href='https://donate.kbs-frb.be/Brussel_UMC_SintPieter/~mon-don?_cv=1'>\
-    this link </a>, and send us a screenshot / photo by email to the address\
-    <strong>info@fifa-covid19.be</strong>",
-    'payment_nl': "Om uw registratie af te ronden, vragen wij u om \
-    een minimale donatie van <strong>6€</strong> te maken bij CHU Saint-Pierre via \
-    deze link <a href='https://donate.kbs-frb.be/Brussel_UMC_SintPieter/~mon-don?_cv=1'>\
-    </a>, en stuur ons een screenshot / foto per e-mail naar het adres \
-    <strong>info@fifa-covid19.be</strong>",
+    I want to support them </a> ",
+
+    'payment_nl': "Registratie gevalideered ! Hoe zit het met de registratiekosten? Je geeft \
+    <strong>What je wilt ! </strong> Dit kleine gebaar is erg belangrijk voor de CHU Saint-Pierre. \
+    <a href='https://donate.kbs-frb.be/Brussel_UMC_SintPieter/~mon-don?_cv=1'>\
+    Ik wil ze steunen </a> ",
     "already_paid_fr": "Vous avez confirmé votre inscription ! Si vous le \
     souhaitez, vous pouvez toujours \
     <a href='https://donate.kbs-frb.be/Brussel_UMC_SintPieter/~mon-don?_cv=1'>\
