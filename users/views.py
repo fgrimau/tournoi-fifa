@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from users.forms import ProfileChangeForm
@@ -30,4 +30,23 @@ def profile_view(request, lang=""):
     else:
         message = messages_langs["payment_{}".format(lang)]
 
+    user_prof = request.user
+
     return render(request, "profil_{}.html".format(lang), locals())
+
+
+def other_profile_view(request, lang="", username=""):
+    should_be_dark = True
+
+    nb_inscrits = User.objects.filter(is_staff=False).count()
+    user = get_object_or_404(User, username=username)
+
+    return render(request, "profil_{}.html".format(lang), locals())
+
+
+def user_list_view(request, lang=""):
+    users = User.objects.all()
+    should_be_dark = True
+    nb_inscrits = User.objects.filter(is_staff=False).count()
+
+    return render(request, "user_list_{}.html".format(lang), locals())
