@@ -1,0 +1,31 @@
+{% extends 'base_en.html' %}
+
+{% load static %}
+
+{% block content %}
+<section id="list" class="bg-light">
+    <div class="container">
+        <h1 class="text-center">
+            Registered list
+        </h1>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Username</th>
+                  <th scope="col">Platform</th>
+                  <th scope="col">Total points</th>
+                </tr>
+            </thead>
+            {% for user in users %}
+            <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td><a href="{% url 'other_profile_view' lang user.username %}">{{ user.username }}</a></td>
+                <td>{{ user.profile.get_platform_display }}</td>
+                <td>{{ user.profile.total_points }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</section>
+{% endblock %}

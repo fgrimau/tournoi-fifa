@@ -47,7 +47,9 @@
                     <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="{% url 'home_view' lang %}#contact">Contact</a></li>
                 </ul>
                 <span class="border rounded-0 border-warning navbar-text text-nowrap" style="color: #ffffff;font-family: Montserrat, sans-serif;">
-                    &nbsp;Registered : {{ nb_inscrits }}&nbsp;
+                    <a href="{% url 'list_user_view' lang %}" style="text-decoration: none;color: white;">
+                        &nbsp;Registered : {{ nb_inscrits }}&nbsp;
+                    </a>
                 </span>
             </div>
             <button class="navbar-toggler navbar-toggler-right" data-toggle="collapse" type="button" data-toogle="collapse" data-target="#login" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -57,7 +59,7 @@
             <div class="collapse navbar-collapse" id="login" style="max-width: 250px;">
                 <ul class="nav navbar-nav">
                     {% if user.is_authenticated %}
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'profile_view' lang %}">{{ user.username }}</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'profile_view' lang %}">{{ request.user.username }}</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link active" href="{% url 'disconnect_view' lang %}">Log out</a></li>
                     {% else %}
                     <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'login_view' lang %}">Login</a></li>
