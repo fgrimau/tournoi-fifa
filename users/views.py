@@ -25,10 +25,7 @@ def profile_view(request, lang=""):
 
     should_be_dark = True
     nb_inscrits = User.objects.filter(is_staff=False).count()
-    if request.user.profile.paid:
-        message = messages_langs["already_paid_{}".format(lang)]
-    else:
-        message = messages_langs["payment_{}".format(lang)]
+    message = messages_langs["make_donation_{}".format(lang)]
 
     user_prof = request.user
 
