@@ -72,7 +72,7 @@ def complete_profile_view(request, lang=""):
 
 
 def payment_view(request, lang=""):
-    message = messages_langs["payment_{}".format(lang)]
+    message = messages_langs["make_donation_{}".format(lang)]
     understood = messages_langs["understood_{}".format(lang)]
     return render(request, "payment.html", locals())
 
