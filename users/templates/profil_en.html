@@ -37,18 +37,9 @@
                 </p>
             </div>
             <div>
-                {% if request.user.username == user_prof.username %}
                 <a class="btn" role="button" data-toggle="modal" href="#payement" style="font-size: 30px;">
-                {% endif %}
-                    {% if user.profile.paid %}
-                    <i class="fa fa-check" style="font-size: 30px;color: rgb(8,255,8);"></i>
-                    {% else %}
-                    <i class="fa fa-times" style="font-size: 30px;color: rgb(255,8,8);"></i>
-                    {% endif %}
-                    &nbsp;Paid
-                {% if request.user.username == user_prof.username %}
+                    &nbsp;Make a donation
                 </a>
-                {% endif %}
             </div>
         </div>
     </div>
