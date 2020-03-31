@@ -37,6 +37,7 @@ def other_profile_view(request, lang="", username=""):
 
     nb_inscrits = User.objects.filter(is_staff=False).count()
     user = get_object_or_404(User, username=username)
+    message = messages_langs["make_donation_{}".format(lang)]
 
     return render(request, "profil_{}.html".format(lang), locals())
 
