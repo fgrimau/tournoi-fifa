@@ -44,6 +44,42 @@
         </div>
     </div>
     <div class="row" style="padding-bottom: 2%;">
+        <div class="col text-center"><span style="font-size: 40px;font-weight: bold;">Prochains matchs</span></div>
+    </div>
+    <div class="row" style="padding-right: 5%;padding-left: 5%;">
+        <div class="col">
+            <div class="table-responsive table-borderless">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="col-md-3">Joueur 1</th>
+                            <th class="col-md-3"></th>
+                            <th class="col-md-3">Joueur 2</th>
+                            <th class="col-md-3">Date</th>
+                        </tr>
+                    </thead>
+                    {% for history_entry in user.profile.to_come %}
+                    <tbody>
+                        <tr>
+                            <td>{{ history_entry.player1.username }}</td>
+                            <td>VS</td>
+                            <td>{{ history_entry.player2.username }}</td>
+                            <td>{{ history_entry.date_played|date:"d/m/Y - G:i" }}</td>
+                        </tr>
+                    </tbody>
+                    {% empty %}
+                    <tbody>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tbody>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="padding-bottom: 2%;">
         <div class="col text-center"><span style="font-size: 40px;font-weight: bold;">Historique</span></div>
     </div>
     <div class="row" style="padding-right: 5%;padding-left: 5%;">
@@ -61,9 +97,9 @@
                     {% for history_entry in user.profile.history %}
                     <tbody>
                         <tr>
-                            <td>{{ history_entry.winner.username }}</td>
-                            <td>{{ history_entry.looser.username }}</td>
-                            <td>{{ history_entry.winner_points }} - {{ history_entry.looser_points }}</td>
+                            <td>{{ history_entry.player1.username }}</td>
+                            <td>{{ history_entry.player2.username }}</td>
+                            <td>{{ history_entry.player1_points }} - {{ history_entry.player2_points }}</td>
                             <td>{{ history_entry.date_played|date:"d/m/Y - G:i" }}</td>
                         </tr>
                     </tbody>

@@ -4,11 +4,11 @@ import matching.models
 
 class HistoryAdmin(admin.ModelAdmin):
     list_display = [
-        "id", "winner", "looser", "winner_points",
-        "looser_points", "date_played"]
-    list_filter = ["winner", "looser", "date_played"]
+        "id", "player1", "player2", "player1_points",
+        "player2_points", "date_played"]
+    list_filter = ["player1", "player2", "date_played"]
     ordering = ["date_played"]
-    search_fields = ["winner", "looser"]
+    search_fields = ["player1", "player2"]
 
 
 class PouleAdmin(admin.ModelAdmin):
