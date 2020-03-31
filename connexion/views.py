@@ -17,32 +17,22 @@ messages_langs = {
     'disco_fr': "Vous avez été déconnecté",
     'disco_en': "You've been disconnected",
     'disco_nl': "Je bent verbroken",
-    'payment_fr': "Inscription validée ! Et les frais d'inscription? Vous donnez \
-     <strong>ce que vous voulez ! </strong> Ce petit geste compte énormément pour le CHU Saint-Pierre. \
-    <a href='https://donate.kbs-frb.be/Brussel_UMC_SintPieter/~mon-don?_cv=1'>\
-    Je veux les soutenir </a> ",
 
-    'payment_en': "Registration validated ! What about the registration fees ? You give \
-    <strong>What you want ! </strong> This little gesture is very important to the CHU Saint-Pierre. \
-    <a href='https://donate.kbs-frb.be/Brussel_UMC_SintPieter/~mon-don?_cv=1'>\
-    I want to support them </a> ",
-
-    'payment_nl': "Registratie gevalideered ! Hoe zit het met de registratiekosten? Je geeft \
-    <strong>What je wilt ! </strong> Dit kleine gebaar is erg belangrijk voor de CHU Saint-Pierre. \
-    <a href='https://donate.kbs-frb.be/Brussel_UMC_SintPieter/~mon-don?_cv=1'>\
-    Ik wil ze steunen </a> ",
-    "already_paid_fr": "Vous avez confirmé votre inscription ! Si vous le \
+    "make_donation_fr": "Vous avez confirmé votre inscription ! Si vous le \
     souhaitez, vous pouvez toujours \
     <a href='https://donate.kbs-frb.be/Brussel_UMC_SintPieter/~mon-don?_cv=1'>\
     faire un don supplémentaire</a>",
-    "already_paid_en": "You have already confirmed your registration ! if you wish \
+
+    "make_donation_en": "You have already confirmed your registration ! if you wish \
     you can always \
     <a href='https://donate.kbs-frb.be/Brussel_UMC_SintPieter/~mon-don?_cv=1'>\
     make an additional donation</a>",
-    "already_paid_nl": "U heeft uw inschrijving bevestigd! Indeen gewenst \
+
+    "make_donation_nl": "U heeft uw inschrijving bevestigd! Indeen gewenst \
     kunt u altijd  \
     <a href='https://donate.kbs-frb.be/Brussel_UMC_SintPieter/~mon-don?_cv=1'>\
     een extra donatie doen</a>",
+
     "understood_fr": "Compris !",
     "understood_en": "Understood !",
     "understood_nl": "Begrepen !",

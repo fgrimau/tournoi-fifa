@@ -24,8 +24,6 @@ class Profile(models.Model):
         related_name="pool_players", default=None,
         null=True, blank=True)
 
-    paid = models.BooleanField(default=False)
-
     @property
     def gravatar(self):
         mail = self.user.email.lower().encode('utf8')
