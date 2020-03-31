@@ -11,12 +11,13 @@
         <div class="row text-center">
             {% for pool in poules %}
             <div class="col">
-                <h4 class="section-heading">Groep {{ pool.id }}</h4>
+                <h4 class="section-heading">Groep {{ forloop.counter }}</h4>
                 <div>
                     <div class="table-responsive table-borderless text-center">
                         <table class="table table-bordered table-dark table-sm">
                             <thead>
                                 <tr>
+                                    <th>#</th>
                                     <th class="text-center">Pseudo</th>
                                     <th>G</th>
                                     <th>N</th>
@@ -30,6 +31,7 @@
                             <tbody>
                                 {% for pool_user in pool.ranking %}
                                 <tr>
+                                    <td>{{forloop.counter}}</td>
                                     <td>{{pool_user.user.username}}</td>
                                     <td>{{pool_user.total_victories}}</td>
                                     <td>{{pool_user.total_null}}</td>

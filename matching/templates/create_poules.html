@@ -1,0 +1,116 @@
+{% extends 'base_fr.html' %}
+
+{% load bootstrap4 %}
+
+{% block content %}
+<section id="createpoules">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="text-uppercase section-heading" style="padding-bottom: 2%;">Créer les poules</h2>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-4">
+                <form method="post">
+                    {% csrf_token %}
+                    {% bootstrap_form form %} <!-- show_label=False -->
+                    {% buttons %}
+                        <button class="btn btn-primary btn-block" type="submit">
+                            Créer un apperçu
+                        </button>
+                    {% endbuttons %}
+                </form>
+            </div>
+            <div class="col-md-4">
+                Joueurs PS4 : {{ PS4_users.count }}
+                <br>
+                <br>
+                Joueurs XBOX : {{ XBOX_users.count }}
+            </div>
+        </div>
+    </div>
+</section>
+{% if preview %}
+<form action="{% url 'confirm_pools' lang %}" method="POST">
+    <section id="preview_ps4">
+        <h3>
+            poules PS4
+        </h3>
+
+        <div class="row text-center">
+            {% for poule, pool_users in ps4_preview.items  %}
+            <div class="col col-sm-6 col-md-3">
+                <h4 class="section-heading">pool {{ poule }}</h4>
+                <div>
+                    <div class="table-responsive table-borderless text-center">
+                        <table class="table table-bordered table-dark table-sm">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">#</th>
+                                    <th class="text-center">Pseudo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for pool_user in pool_users %}
+                                <tr>
+                                    <td>{{ forloop.counter }}</td>
+                                    <td>{{ pool_user }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    <section id="preview_xbox">
+        <h3>
+            poules XBOX
+        </h3>
+
+        <div class="row text-center">
+            {% for poule, pool_users in xbox_preview.items  %}
+            <div class="col col-sm-6 col-md-3">
+                <h4 class="section-heading">pool {{ poule }}</h4>
+                <div>
+                    <div class="table-responsive table-borderless text-center">
+                        <table class="table table-bordered table-dark table-sm">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">#</th>
+                                    <th class="text-center">Pseudo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for pool_user in pool_users %}
+                                <tr>
+                                    <td>{{ forloop.counter }}</td>
+                                    <td>{{ pool_user }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <div class="container-fluid text-center">
+        {% csrf_token %}
+        <input type="hidden" name="ps4_pools" value='{{ json_ps4|safe }}'>
+        <input type="hidden" name="xbox_pools" value='{{ json_xbox|safe }}'>
+        {% buttons %}
+            <button type="submit" class="text-center btn btn-primary">Confirmer les poules</a>
+        {% endbuttons %}
+    </div>
+</form>
+{% endif %}
+
+{% endblock %}

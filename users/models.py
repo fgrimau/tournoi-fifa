@@ -20,7 +20,7 @@ class Profile(models.Model):
         verbose_name="Player's platform")
     bio = models.TextField()
     poule = models.ForeignKey(
-        Poule, on_delete=models.PROTECT,
+        Poule, on_delete=models.SET_NULL,
         related_name="pool_players", default=None,
         null=True, blank=True)
 
