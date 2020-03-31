@@ -18,18 +18,15 @@ messages_langs = {
     'disco_en': "You've been disconnected",
     'disco_nl': "Je bent verbroken",
 
-    "make_donation_fr": "Vous avez confirmé votre inscription ! Si vous le \
-    souhaitez, vous pouvez toujours \
+    "make_donation_fr": "Les hopitaux ont besoin de vous ! \
     <a href='https://donate.kbs-frb.be/Brussel_UMC_SintPieter/~mon-don?_cv=1'>\
     faire un don supplémentaire</a>",
 
-    "make_donation_en": "You have already confirmed your registration ! if you wish \
-    you can always \
+    "make_donation_en": "the hospitals need you ! \
     <a href='https://donate.kbs-frb.be/Brussel_UMC_SintPieter/~mon-don?_cv=1'>\
     make an additional donation</a>",
 
-    "make_donation_nl": "U heeft uw inschrijving bevestigd! Indeen gewenst \
-    kunt u altijd  \
+    "make_donation_nl": "ziekenhuizen hebben u nodig ! \
     <a href='https://donate.kbs-frb.be/Brussel_UMC_SintPieter/~mon-don?_cv=1'>\
     een extra donatie doen</a>",
 
