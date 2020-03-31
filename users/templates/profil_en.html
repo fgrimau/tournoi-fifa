@@ -26,7 +26,7 @@
             <div style="width: 50%;">
                 <img class="img-thumbnail bg-warning border rounded-0 shadow-sm" src="{{ user.profile.gravatar }}" style="width: 20%;max-width: 250px;">
                 <span style="font-size: 30px;font-family: 'Droid Serif';font-weight: bold;">&nbsp;Points :
-                {{user.profile.total_points}}
+                {{ user.profile.total_points }}
                 </span>
             </div>
             <div style="width: 25%;">
@@ -44,6 +44,42 @@
         </div>
     </div>
     <div class="row" style="padding-bottom: 2%;">
+        <div class="col text-center"><span style="font-size: 40px;font-weight: bold;">Next matches</span></div>
+    </div>
+    <div class="row" style="padding-right: 5%;padding-left: 5%;">
+        <div class="col">
+            <div class="table-responsive table-borderless">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="col-md-3">Player 1</th>
+                            <th class="col-md-3"></th>
+                            <th class="col-md-3">Player 2</th>
+                            <th class="col-md-3">Date</th>
+                        </tr>
+                    </thead>
+                    {% for history_entry in user.profile.to_come %}
+                    <tbody>
+                        <tr>
+                            <td>{{ history_entry.player1.username }}</td>
+                            <td>VS</td>
+                            <td>{{ history_entry.player2.username }}</td>
+                            <td>{{ history_entry.date_played|date:"d/m/Y - G:i" }}</td>
+                        </tr>
+                    </tbody>
+                    {% empty %}
+                    <tbody>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tbody>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="padding-bottom: 2%;">
         <div class="col text-center"><span style="font-size: 40px;font-weight: bold;">History</span></div>
     </div>
     <div class="row" style="padding-right: 5%;padding-left: 5%;">
@@ -52,8 +88,8 @@
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th class="col-md-3">Winner</th>
-                            <th class="col-md-3">Loser</th>
+                            <th class="col-md-3">Player 1</th>
+                            <th class="col-md-3">Player 2</th>
                             <th class="col-md-3">Score</th>
                             <th class="col-md-3">Date</th>
                         </tr>
@@ -61,9 +97,9 @@
                     {% for history_entry in user.profile.history %}
                     <tbody>
                         <tr>
-                            <td>{{ history_entry.user.winner.username }}</td>
-                            <td>{{ history_entry.user.looser.username }}</td>
-                            <td>{{ history_entry.winner_points }} - {{ history_entry.looser_points }}</td>
+                            <td>{{ history_entry.player1.username }}</td>
+                            <td>{{ history_entry.player2.username }}</td>
+                            <td>{{ history_entry.player1_points }} - {{ history_entry.player2_points }}</td>
                             <td>{{ history_entry.date_played|date:"d/m/Y - G:i" }}</td>
                         </tr>
                     </tbody>

@@ -1,6 +1,7 @@
 import hashlib
 from django.contrib.auth.models import User
 from django.db import models
+from django.db.models import Q, F
 
 from matching.models import Poule
 
@@ -32,44 +33,123 @@ class Profile(models.Model):
 
     @property
     def total_points(self):
-        total = self.user.winner.filter(null_match=False).count() * 3
-        total += self.user.winner.filter(null_match=True).count()
-        total += self.user.looser.filter(null_match=True).count()
+        total = self.total_victories * 3
+        total += self.total_null
         return total
 
     @property
     def total_victories(self):
-        return self.user.winner.filter(null_match=False).count()
+        return (
+            self.user.as_player1.filter(
+                null_match=False,
+                player1_points__gt=F('player2_points'),
+                played=True
+            ) | self.user.as_player2.filter(
+                null_match=False,
+                player2_points__gt=F('player1_points'),
+                played=True
+            )).count()
 
     @property
     def total_goals(self):
         total = 0
-        for history in self.user.winner.all():
-            total += history.winner_points
-        for history in self.user.looser.all():
-            total += history.looser_points
+        qs = self.user.as_player1.all()
+        qs_win = qs.filter(
+            null_match=False,
+            player1_points__gt=F('player2_points'),
+            played=True
+        )
+        qs_loos = qs.filter(
+            null_match=False,
+            player1_points__lt=F('player2_points'),
+            played=True
+        )
+        for history in qs_win | qs_loos:
+            total += history.player1_points
+
+        qs = self.user.as_player2.all()
+        qs_win = qs.filter(
+            null_match=False,
+            player2_points__gt=F('player1_points'),
+            played=True
+        )
+        qs_loos = qs.filter(
+            null_match=False,
+            player2_points__lt=F('player1_points'),
+            played=True
+        )
+        for history in qs_win | qs_loos:
+            total += history.player2_points
+
         return total
 
     @property
     def total_got_goals(self):
         total = 0
-        for history in self.user.winner.all():
-            total += history.looser_points
-        for history in self.user.looser.all():
-            total += history.winner_points
+        qs = self.user.as_player1.all()
+        qs_win = qs.filter(
+            null_match=False,
+            player1_points__gt=F('player2_points'),
+            played=True
+        )
+        qs_loos = qs.filter(
+            null_match=False,
+            player1_points__lt=F('player2_points'),
+            played=True
+        )
+        for history in qs_win | qs_loos:
+            total += history.player2_points
+
+        qs = self.user.as_player2.all()
+        qs_win = qs.filter(
+            null_match=False,
+            player2_points__gt=F('player1_points'),
+            played=True
+        )
+        qs_loos = qs.filter(
+            null_match=False,
+            player2_points__lt=F('player1_points'),
+            played=True
+        )
+        for history in qs_win | qs_loos:
+            total += history.player1_points
+
         return total
 
     @property
     def total_null(self):
-        return (self.user.winner.filter(null_match=True) | self.user.looser.filter(null_match=True)).count()
+        return (
+            self.user.as_player1.all() | self.user.as_player2.all()).filter(
+                null_match=True,
+                played=True
+            ).count()
 
     @property
     def total_defeats(self):
-        return self.user.looser.filter(null_match=False).count()
+        return ((
+            self.user.as_player1.filter(
+                null_match=False,
+                player2_points__gt=F('player1_points'),
+                played=True
+            ) | self.user.as_player2.all()).filter(
+                null_match=False,
+                player1_points__gt=F('player2_points'),
+                played=True
+        )).count()
 
     @property
     def history(self):
-        return self.user.winner.all() | self.user.looser.all()
+        return (
+            self.user.as_player1.all() | self.user.as_player2.all()).filter(
+                played=True
+            ).order_by("-date_played")
+
+    @property
+    def to_come(self):
+        return (
+            self.user.as_player1.all() | self.user.as_player2.all()).filter(
+                played=False
+            ).order_by("date_played")
 
     @property
     def get_diff(self):
