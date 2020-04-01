@@ -31,9 +31,7 @@ def create_poules_view(request, lang=""):
             ps4_preview = create_pools(
                 form.cleaned_data["nb_ps4_poules"], "a")
 
-            print(ps4_preview)
             json_ps4 = json.dumps(ps4_preview)
-            print(json_ps4)
             json_xbox = json.dumps(xbox_preview)
     else:
         form = PouleForm()
