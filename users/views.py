@@ -1,6 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.db.models import Q
+
 from users.forms import ProfileChangeForm
 from connexion.views import messages_langs
 
@@ -43,7 +45,7 @@ def other_profile_view(request, lang="", username=""):
 
 
 def user_list_view(request, lang=""):
-    users = User.objects.all()
+    users = User.objects.filter(~Q(profile=None))
     should_be_dark = True
     nb_inscrits = User.objects.filter(is_staff=False).count()
 

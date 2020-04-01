@@ -5,7 +5,7 @@ import matching.models
 class HistoryAdmin(admin.ModelAdmin):
     list_display = [
         "id", "player1", "player2", "player1_points",
-        "player2_points", "date_played"]
+        "player2_points", "date_played", "played"]
     list_filter = ["player1", "player2", "date_played"]
     ordering = ["date_played"]
     search_fields = ["player1", "player2"]
