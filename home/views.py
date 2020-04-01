@@ -4,11 +4,12 @@ from django.contrib import messages
 from django.core.mail import send_mail
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+import secrets
 
 from connexion.forms import ResetPasswordForm, ResetPasswordForm2
 from connexion.models import Forgotten_pass
 from home.forms import ContactForm
-import secrets
+import connexion.views
 
 
 messages_langs = {
@@ -54,12 +55,14 @@ def home(request, lang=""):
     if request.user.is_authenticated:
         try:
             print("user.profile =", request.user.profile)
-        except:
+        except Exception:
             messages.add_message(
                 request,
                 messages.WARNING,
                 messages_langs["Not_completed_{}".format(lang)]
             )
+
+    message = connexion.views.messages_langs["make_donation_{}".format(lang)]
 
     return render(request, "index_{}.html".format(lang), locals())
 

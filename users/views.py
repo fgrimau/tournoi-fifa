@@ -5,7 +5,7 @@ from users.forms import ProfileChangeForm
 from connexion.views import messages_langs
 
 
-@login_required(login_url="/en/users")
+@login_required(login_url="/en/users/login")
 def profile_view(request, lang=""):
     if request.method == "POST":
         user_form = ProfileChangeForm(request.POST)

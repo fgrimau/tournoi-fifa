@@ -40,12 +40,15 @@
                     </div>
                     <div class="col-12 mb-3" style="margin-top: 2%;margin-bottom: 0px;">
                         <div class="d-flex d-lg-flex justify-content-center align-items-center justify-content-lg-center align-items-lg-center"><span style="font-size: 40px;font-family: Montserrat, sans-serif;font-style: italic;">01 - 03 april 2020</span></div>
-                        <div><span style="font-size: 40px;">Registratiekosten : Aan uw vrijgevigheid&nbsp;</span><a href="#about" style="font-size: 40px;">*</a></div>
+                        <!-- <div>
+                            <span style="font-size: 40px;">Registratiekosten : Aan uw vrijgevigheid&nbsp;</span>
+                            <a href="#about" style="font-size: 40px;">*</a>
+                        </div> -->
                     </div>
                 </div>
             </div>
             {% if not user.is_authenticated %}
-            <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" role="button" href="{% url 'register_view' lang %}">Registreer</a>
+            <button class="btn btn-primary" disabled>inschrijvingen gesloten</button>
             {% endif %}
         </div>
     </div>
@@ -227,4 +230,29 @@
         </div>
     </div>
 </section>
+
+<div class="modal fade" role="dialog" tabindex="-1" id="payement">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4>Doe een gift</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col">
+                        <p class="text-center">{{ message|safe }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-light" data-dismiss="modal" type="button">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
