@@ -16,9 +16,6 @@ class Poule(models.Model):
 
     @property
     def ranking(self):
-        print(sorted(
-            list(self.pool_players.all()),
-            key=lambda x: x.total_points, reverse=True))
         return sorted(
             list(self.pool_players.all()),
             key=lambda x: x.total_points, reverse=True)
