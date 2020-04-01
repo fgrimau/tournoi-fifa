@@ -1,11 +1,11 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponseNotFound
 from django.contrib import messages
 from django.contrib.auth import logout, authenticate, login
 from django.urls import reverse
 
 from connexion.forms import UserForm, CompleteProfileForm
-
+import tournoi_fifa.settings as settings
 
 messages_langs = {
     'wlcbck_fr': "Rebonjour {} !",
@@ -37,6 +37,8 @@ messages_langs = {
 
 
 def register_view(request, lang=""):
+    if settings.REGISTRATION_OPENED is False:
+        return HttpResponseNotFound()
     if request.method == "POST":
         form = UserForm(request.POST)
         if form.is_valid():  # Verify the data of the form

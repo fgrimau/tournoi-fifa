@@ -64,7 +64,11 @@
                         <li class="nav-item" role="presentation"><a class="nav-link active" href="{% url 'disconnect_view' lang %}">Uitloggen</a></li>
                     {% else %}
                         <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'login_view' lang %}">Login</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link active" href="{% url 'register_view' lang %}">Inschrijven</a></li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" role="button" data-toggle="modal" href="#payement">
+                                &nbsp;Doe een gift
+                            </a>
+                        </li>
                     {% endif %}
                 </ul>
             </div>
