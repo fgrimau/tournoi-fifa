@@ -46,73 +46,69 @@
     <div class="row" style="padding-bottom: 2%;">
         <div class="col text-center"><span style="font-size: 40px;font-weight: bold;">Next matches</span></div>
     </div>
-    <div class="row" style="padding-right: 5%;padding-left: 5%;">
-        <div class="col">
-            <div class="table-responsive table-borderless">
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th class="col-md-3">Player 1</th>
-                            <th class="col-md-3"></th>
-                            <th class="col-md-3">Player 2</th>
-                            <th class="col-md-3">Date</th>
-                        </tr>
-                    </thead>
-                    {% for history_entry in user.profile.to_come %}
-                    <tbody>
-                        <tr>
-                            <td>{{ history_entry.player1.username }} (ID: {{history_entry.player1.profile.identifiant}})</td>
-                            <td>VS</td>
-                            <td>{{ history_entry.player2.username }} (ID : {{history_entry.player2.profile.identifiant}})</td>
-                            <td>{{ history_entry.date_played|date:"d/m/Y - G:i" }}</td>
-                        </tr>
-                    </tbody>
-                    {% empty %}
-                    <tbody>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                    </tbody>
-                    {% endfor %}
-                </table>
-            </div>
+    <div class="container">
+        <div class="table-responsive table-borderless">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Player 1</th>
+                        <th></th>
+                        <th>Player 2</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                {% for history_entry in user.profile.to_come %}
+                <tbody>
+                    <tr>
+                        <td>{{ history_entry.player1.username }} (ID: {{history_entry.player1.profile.identifiant}})</td>
+                        <td>VS</td>
+                        <td>{{ history_entry.player2.username }} (ID : {{history_entry.player2.profile.identifiant}})</td>
+                        <td>{{ history_entry.date_played|date:"d/m/Y - G:i" }}</td>
+                    </tr>
+                </tbody>
+                {% empty %}
+                <tbody>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tbody>
+                {% endfor %}
+            </table>
         </div>
     </div>
     <div class="row" style="padding-bottom: 2%;">
         <div class="col text-center"><span style="font-size: 40px;font-weight: bold;">History</span></div>
     </div>
-    <div class="row" style="padding-right: 5%;padding-left: 5%;">
-        <div class="col">
-            <div class="table-responsive table-borderless">
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th class="col-md-3">Player 1</th>
-                            <th class="col-md-3">Player 2</th>
-                            <th class="col-md-3">Score</th>
-                            <th class="col-md-3">Date</th>
-                        </tr>
-                    </thead>
-                    {% for history_entry in user.profile.history %}
-                    <tbody>
-                        <tr>
-                            <td>{{ history_entry.player1.username }}</td>
-                            <td>{{ history_entry.player2.username }}</td>
-                            <td>{{ history_entry.player1_points }} - {{ history_entry.player2_points }}</td>
-                            <td>{{ history_entry.date_played|date:"d/m/Y - G:i" }}</td>
-                        </tr>
-                    </tbody>
-                    {% empty %}
-                    <tbody>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                    </tbody>
-                    {% endfor %}
-                </table>
-            </div>
+    <div class="container">
+        <div class="table-responsive table-borderless">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Player 1</th>
+                        <th>Player 2</th>
+                        <th>Score</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                {% for history_entry in user.profile.history %}
+                <tbody>
+                    <tr>
+                        <td>{{ history_entry.player1.username }}</td>
+                        <td>{{ history_entry.player2.username }}</td>
+                        <td>{{ history_entry.player1_points }} - {{ history_entry.player2_points }}</td>
+                        <td>{{ history_entry.date_played|date:"d/m/Y - G:i" }}</td>
+                    </tr>
+                </tbody>
+                {% empty %}
+                <tbody>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tbody>
+                {% endfor %}
+            </table>
         </div>
     </div>
 </section>
