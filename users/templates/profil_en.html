@@ -61,9 +61,9 @@
                     {% for history_entry in user.profile.to_come %}
                     <tbody>
                         <tr>
-                            <td>{{ history_entry.player1.username }} ({{history_entry.player1.profile.identifiant}})</td>
+                            <td>{{ history_entry.player1.username }} (ID: {{history_entry.player1.profile.identifiant}})</td>
                             <td>VS</td>
-                            <td>{{ history_entry.player2.username }} ({{history_entry.player2.profile.identifiant}})</td>
+                            <td>{{ history_entry.player2.username }} (ID : {{history_entry.player2.profile.identifiant}})</td>
                             <td>{{ history_entry.date_played|date:"d/m/Y - G:i" }}</td>
                         </tr>
                     </tbody>
