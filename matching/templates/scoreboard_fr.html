@@ -32,7 +32,7 @@
                                 {% for pool_user in pool.ranking %}
                                 <tr>
                                     <td>{{forloop.counter}}</td>
-                                    <td>{{pool_user.user.username}}</td>
+                                    <td>{{pool_user.identifiant}}</td>
                                     <td>{{pool_user.total_victories}}</td>
                                     <td>{{pool_user.total_null}}</td>
                                     <td>{{pool_user.total_defeats}}</td>
