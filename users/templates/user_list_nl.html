@@ -14,6 +14,7 @@
                   <th scope="col">#</th>
                   <th scope="col">Pseudo</th>
                   <th scope="col">Platform</th>
+                  <th scope="col">Platform naam</th>
                   <th scope="col">totale punten</th>
                 </tr>
             </thead>
@@ -22,6 +23,7 @@
                 <th scope="row">{{ forloop.counter }}</th>
                 <td><a href="{% url 'other_profile_view' lang user.username %}">{{ user.username }}</a></td>
                 <td>{{ user.profile.get_platform_display }}</td>
+                <td>{{ user.profile.identifiant }}</td>
                 <td>{{ user.profile.total_points }}</td>
             </tr>
             {% endfor %}
