@@ -126,16 +126,16 @@ class Profile(models.Model):
 
     @property
     def total_defeats(self):
-        return ((
+        return (
             self.user.as_player1.filter(
                 null_match=False,
                 player2_points__gt=F('player1_points'),
                 played=True
-            ) | self.user.as_player2.all()).filter(
+            ) | self.user.as_player2.filter(
                 null_match=False,
                 player1_points__gt=F('player2_points'),
                 played=True
-        )).count()
+            )).count()
 
     @property
     def history(self):
