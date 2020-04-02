@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib.admin.views.decorators import staff_member_required
 from django.http import HttpResponseBadRequest, HttpResponseRedirect
 
-from matching.models import Poule
+from matching.models import Poule, Finale_poule
 from matching.forms import PouleForm
 from matching.utils import create_pools
 from users.models import Profile
@@ -43,6 +43,23 @@ def create_poules_view(request, lang=""):
     nb_inscrits = User.objects.filter(is_staff=False).count()
 
     return render(request, "create_poules.html", locals())
+
+
+def finale_view(request, lang="", platform=""):
+    should_be_dark = True
+    if platform != "ps4" and platform != "xbox":
+        return render(request, "choose_finale_scoreboard.html", locals())
+
+    nb_inscrits = User.objects.filter(is_staff=False).count()
+
+    tmp_pools = Finale_poule.objects.filter(
+        platform=platform).order_by("level")
+    pools = {}
+
+    for each_class in tmp_pools:
+        pools.setdefault(each_class.level, []).append(each_class)
+
+    return render(request, "{}_tournoi.svg".format(platform), locals())
 
 
 @staff_member_required

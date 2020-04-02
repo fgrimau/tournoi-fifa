@@ -1,0 +1,105 @@
+<svg id="Calque_1" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 704.72222 329.66649">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-1, .cls-2 {
+        stroke: #000;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2 {
+        fill: none;
+      }
+
+      .cls-3 {
+        font-size: 30.16746px;
+      }
+
+      .cls-3, .cls-4 {
+        font-family: MyriadPro-Regular, Myriad Pro;
+      }
+
+      .cls-4 {
+        font-size: 24.68849px;
+      }
+    </style>
+  </defs>
+  <title>mini_tournoi</title>
+  <rect class="cls-1" x="0.5" y="0.5" width="119.08206" height="39.69402"/>
+  <rect class="cls-1" x="0.5" y="124.34535" width="119.08206" height="39.69402"/>
+  <rect class="cls-1" x="0.5" y="83.06356" width="119.08206" height="39.69402"/>
+  <rect class="cls-1" x="0.5" y="41.78178" width="119.08206" height="39.69402"/>
+  <rect class="cls-1" x="0.5" y="165.62713" width="119.08206" height="39.69402"/>
+  <rect class="cls-1" x="0.5" y="289.47247" width="119.08206" height="39.69402"/>
+  <rect class="cls-1" x="0.5" y="248.19069" width="119.08206" height="39.69402"/>
+  <rect class="cls-1" x="0.5" y="206.90891" width="119.08206" height="39.69402"/>
+  <line class="cls-2" x1="119.58206" y1="20.34701" x2="139.42907" y2="20.34701"/>
+  <line class="cls-2" x1="139.42907" y1="41.78178" x2="139.42907" y2="20.34701"/>
+  <line class="cls-2" x1="119.58206" y1="62.42267" x2="139.42907" y2="62.42267"/>
+  <line class="cls-2" x1="139.42907" y1="40.9879" x2="139.42907" y2="62.42267"/>
+  <line class="cls-2" x1="119.58206" y1="103.30751" x2="139.42907" y2="103.30751"/>
+  <line class="cls-2" x1="139.42907" y1="124.74229" x2="139.42907" y2="103.30751"/>
+  <line class="cls-2" x1="119.58206" y1="145.38318" x2="139.42907" y2="145.38318"/>
+  <line class="cls-2" x1="139.42907" y1="123.94841" x2="139.42907" y2="145.38318"/>
+  <line class="cls-2" x1="119.58206" y1="184.28332" x2="139.42907" y2="184.28332"/>
+  <line class="cls-2" x1="139.42907" y1="205.71809" x2="139.42907" y2="184.28332"/>
+  <line class="cls-2" x1="119.58206" y1="226.35898" x2="139.42907" y2="226.35898"/>
+  <line class="cls-2" x1="139.42907" y1="204.92421" x2="139.42907" y2="226.35898"/>
+  <line class="cls-2" x1="119.58206" y1="266.84688" x2="139.42907" y2="266.84688"/>
+  <line class="cls-2" x1="139.42907" y1="288.28165" x2="139.42907" y2="266.84688"/>
+  <line class="cls-2" x1="119.58206" y1="308.92254" x2="139.42907" y2="308.92254"/>
+  <line class="cls-2" x1="139.42907" y1="287.48777" x2="139.42907" y2="308.92254"/>
+  <rect class="cls-1" x="159.27608" y="21.14089" width="119.08206" height="39.69402"/>
+  <line class="cls-2" x1="139.42907" y1="40.9879" x2="159.27608" y2="40.9879"/>
+  <rect class="cls-1" x="159.27608" y="103.70445" width="119.08206" height="39.69402"/>
+  <line class="cls-2" x1="139.42907" y1="123.55147" x2="159.27608" y2="123.55147"/>
+  <rect class="cls-1" x="159.27608" y="185.87108" width="119.08206" height="39.69402"/>
+  <line class="cls-2" x1="139.42907" y1="205.71809" x2="159.27608" y2="205.71809"/>
+  <rect class="cls-1" x="159.27608" y="268.43464" width="119.08206" height="39.69402"/>
+  <line class="cls-2" x1="139.42907" y1="288.28165" x2="159.27608" y2="288.28165"/>
+  <line class="cls-2" x1="278.35815" y1="40.9879" x2="298.20516" y2="40.9879"/>
+  <line class="cls-2" x1="278.35815" y1="123.55147" x2="298.20516" y2="123.55147"/>
+  <line class="cls-2" x1="298.20516" y1="40.9879" x2="298.20516" y2="123.55147"/>
+  <line class="cls-2" x1="278.35815" y1="205.32115" x2="298.20516" y2="205.32115"/>
+  <line class="cls-2" x1="298.20516" y1="205.32115" x2="298.20516" y2="287.88471"/>
+  <line class="cls-2" x1="278.35815" y1="287.48777" x2="298.20516" y2="287.48777"/>
+  <line class="cls-2" x1="298.20516" y1="82.26968" x2="318.05217" y2="82.26968"/>
+  <line class="cls-2" x1="298.20516" y1="248.19069" x2="318.05217" y2="248.19069"/>
+  <rect class="cls-1" x="318.05217" y="61.62879" width="119.08206" height="39.69402"/>
+  <rect class="cls-1" x="318.05217" y="228.34368" width="119.08206" height="39.69402"/>
+  <line class="cls-2" x1="437.13423" y1="82.66662" x2="456.98124" y2="82.66662"/>
+  <line class="cls-2" x1="456.98124" y1="82.66662" x2="456.98124" y2="165.23019"/>
+  <line class="cls-2" x1="437.13423" y1="247.79375" x2="456.98124" y2="247.79375"/>
+  <line class="cls-2" x1="456.98124" y1="247.79375" x2="456.98124" y2="165.23019"/>
+  <line class="cls-2" x1="456.98124" y1="164.03937" x2="476.82825" y2="164.03937"/>
+  <rect class="cls-1" x="476.82825" y="144.19236" width="119.08206" height="39.69402"/>
+  <text class="cls-3" transform="translate(55.6952 31.06528) scale(0.59781 1)">a</text>
+  <text class="cls-3" transform="translate(54.6454 73.22934) scale(0.59781 1)">b</text>
+  <text class="cls-3" transform="translate(56.00184 114.46616) scale(0.59781 1)">c</text>
+  <text class="cls-3" transform="translate(54.95595 156.63022) scale(0.59781 1)">d</text>
+  <text class="cls-3" transform="translate(55.52382 195.53061) scale(0.59781 1)">e</text>
+  <text class="cls-3" transform="translate(57.40858 237.38559) scale(0.59781 1)">f</text>
+  <text class="cls-3" transform="translate(55.00087 278.04966) scale(0.59781 1)">g</text>
+  <text class="cls-3" transform="translate(55.037 320.12485) scale(0.59781 1)">h</text>
+  <text class="cls-3" transform="translate(213.74061 51.70542) scale(0.59781 1)">q</text>
+  <text class="cls-3" transform="translate(215.86854 134.26938) scale(0.59781 1)">r</text>
+  <text class="cls-3" transform="translate(215.24647 216.30405) scale(0.59781 1)">s</text>
+  <text class="cls-3" transform="translate(215.83241 298.33774) scale(0.59781 1)">t</text>
+  <text class="cls-3" transform="translate(531.74306 175.02231) scale(0.59781 1)">3</text>
+  <text class="cls-3" transform="translate(373.73329 258.64487) scale(0.59781 1)">z</text>
+  <text class="cls-3" transform="translate(373.34657 92.45835) scale(0.59781 1)">y</text>
+  <rect class="cls-1" x="476.82825" y="187.85578" width="97.45456" height="32.48485"/>
+  <rect class="cls-1" x="476.82825" y="221.64003" width="97.45456" height="32.48485"/>
+  <line class="cls-2" x1="574.28281" y1="204.09821" x2="590.52524" y2="204.09821"/>
+  <line class="cls-2" x1="590.52524" y1="221.64003" x2="590.52524" y2="204.09821"/>
+  <line class="cls-2" x1="574.28281" y1="238.53215" x2="590.52524" y2="238.53215"/>
+  <line class="cls-2" x1="590.52524" y1="220.99033" x2="590.52524" y2="238.53215"/>
+  <rect class="cls-1" x="606.76766" y="204.7479" width="97.45456" height="32.48485"/>
+  <line class="cls-2" x1="590.52524" y1="220.99033" x2="606.76766" y2="220.99033"/>
+  <text class="cls-4" transform="translate(521.99891 212.86997) scale(0.59781 1)">a</text>
+  <text class="cls-4" transform="translate(521.14003 247.37583) scale(0.59781 1)">b</text>
+  <text class="cls-4" transform="translate(651.34022 229.76157) scale(0.59781 1)">q</text>
+</svg>

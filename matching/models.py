@@ -21,6 +21,37 @@ class Poule(models.Model):
             key=lambda x: x.total_points, reverse=True)
 
 
+class Finale_poule(models.Model):
+    level = models.CharField(default="", max_length=20)
+
+    player1 = models.ForeignKey(
+        User, on_delete=models.SET_NULL,
+        null=True, related_name="as_finale_player1")
+    player2 = models.ForeignKey(
+        User, on_delete=models.SET_NULL,
+        null=True, related_name="as_finale_player2")
+
+    finished = models.BooleanField(default=False)
+    winner = models.IntegerField(default=0, verbose_name="winner nb")
+
+    choices = (
+        ('ps4', 'PS4'),
+        ('xbox', 'XBOX'),
+    )
+
+    platform = models.CharField(
+        max_length=4, choices=choices, verbose_name="platforme", default="ps4")
+
+    @property
+    def winner_user(self):
+        if self.winner == 0:
+            return None
+        elif self.winner == 1:
+            return self.player1
+        else:
+            return self.player2
+
+
 class History(models.Model):
     player1 = models.ForeignKey(
         User, null=True, on_delete=models.PROTECT, related_name="as_player1")
