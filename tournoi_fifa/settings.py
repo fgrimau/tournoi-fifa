@@ -56,7 +56,7 @@ MIDDLEWARE = [
 EMAIL_HOST = "ssl0.ovh.net"
 EMAIL_PORT = "465"
 EMAIL_HOST_USER = "info@fifa-covid19.be"
-EMAIL_HOST_PASSWORD = "fifa20-covid19!!"
+EMAIL_HOST_PASSWORD = "ultrasecretpassword"
 EMAIL_USE_SSL = True
 
 
