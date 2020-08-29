@@ -1,7 +1,5 @@
 # tournoi-fifa
 
-## NIQUEZ VOUS C'EST CHIANT A INSTALLER
-
 ### Installation
 
 ```
